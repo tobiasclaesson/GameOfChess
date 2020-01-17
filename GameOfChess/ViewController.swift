@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let segueToInput1View = "segueToInput1View"
 
     override func viewDidLoad() {
         super.viewDidLoad()
