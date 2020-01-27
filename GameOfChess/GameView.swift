@@ -42,6 +42,7 @@ class GameView: UIViewController {
         pieceDragged = touches.first!.view as? UIChessPiece
         
         if pieceDragged != nil{
+            //Origin == top left point of a rect
             sourceOrigin = pieceDragged.frame.origin
         }
     }
@@ -55,7 +56,39 @@ class GameView: UIViewController {
     
     //Check if drag is valid
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        if pieceDragged != nil {
+            //Holds the coordinate of where the piece is when the drag has ended.
+            let touchLocation = touches.first!.location(in: view)
+            
+            //Takes x and y coords from touchLocation
+            var x = Int(touchLocation.x)
+            var y = Int(touchLocation.y)
+            
+            // Remove constants
+            x -= GameView.SPACE_FROM_LEFT_EDGE
+            y -= GameView.SPACE_FROM_TOP_EDGE
+            
+            //Round up
+            x = (x / GameView.TILE_SIZE) * GameView.TILE_SIZE
+            y = (y / GameView.TILE_SIZE) * GameView.TILE_SIZE
+            
+            // Add constants
+            x += GameView.SPACE_FROM_LEFT_EDGE
+            y += GameView.SPACE_FROM_TOP_EDGE
+            
+            destinationOrigin = CGPoint(x: x, y: y)
+            
+            let sourceIndex = Chessboard.indexOf(origin: sourceOrigin)
+            let destIndex = Chessboard.indexOf(origin: destinationOrigin)
+            
+            // If move is valid: set frame origin to destination, else set it back to source origin
+            if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex){
+                pieceDragged.frame.origin = destinationOrigin
+            }
+            else{
+                pieceDragged.frame.origin = sourceOrigin
+            }
+        }
     }
     
     func drag(piece: UIChessPiece, usingGestureRecognizer gestureRecognizer: UIPanGestureRecognizer){

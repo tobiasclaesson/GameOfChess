@@ -16,6 +16,13 @@ class Chessboard: NSObject {
     var whiteKing: King!
     var blackKing: King!
     
+    static func indexOf(origin: CGPoint) -> BoardIndex {
+        let row = (Int(origin.y) - GameView.SPACE_FROM_TOP_EDGE) / GameView.TILE_SIZE
+        let col = (Int(origin.x) - GameView.SPACE_FROM_LEFT_EDGE) / GameView.TILE_SIZE
+        
+        return BoardIndex(row: row, col: col)
+    }
+    
     //Return a frame of a specific index (Kind of a chessboard but in logic instead of graphic)
     static func getFrame(forRow row: Int, forCol col: Int) -> CGRect{
         let x = CGFloat(GameView.SPACE_FROM_LEFT_EDGE + (col * GameView.TILE_SIZE))
