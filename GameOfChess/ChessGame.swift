@@ -11,4 +11,9 @@ import UIKit
 
 class ChessGame: NSObject {
     
+    var chessBoard: Chessboard!
+    
+    init(viewController: GameView) {
+        chessBoard = Chessboard.init(viewController: viewController)
+    }
 }

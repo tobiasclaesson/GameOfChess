@@ -13,7 +13,7 @@ class Rook: UIChessPiece {
     init(frame: CGRect, color: UIColor, vc: GameView) {
         super.init(frame: frame)
         
-        if color == UIColor.black {
+        if color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
             self.text = "♜"
         }
         else{
