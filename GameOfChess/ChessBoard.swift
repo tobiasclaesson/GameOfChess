@@ -16,6 +16,30 @@ class Chessboard: NSObject {
     var whiteKing: King!
     var blackKing: King!
     
+    func remove(piece: Piece){
+        if let chessPiece = piece as? UIChessPiece{
+            //remove from board
+            let indexOnBoard = Chessboard.indexOf(origin: chessPiece.frame.origin)
+            board[indexOnBoard.row][indexOnBoard.col] = Ghost(frame: chessPiece.frame)
+            
+            //remove from array of chessPieces
+            if let indexInChessPieceArray = vc.chessPieces.firstIndex(of: chessPiece){
+                vc.chessPieces.remove(at: indexInChessPieceArray)
+            }
+            
+            //remove from the the screen
+            chessPiece.removeFromSuperview()
+            
+        }
+    }
+    
+    func place(chessPiece: UIChessPiece, toIndex destIndex: BoardIndex, toOrigin destOrigion: CGPoint){
+        
+        chessPiece.frame.origin = destOrigion
+        board[destIndex.row][destIndex.col] = chessPiece
+        
+    }
+    
     static func indexOf(origin: CGPoint) -> BoardIndex {
         let row = (Int(origin.y) - GameView.SPACE_FROM_TOP_EDGE) / GameView.TILE_SIZE
         let col = (Int(origin.x) - GameView.SPACE_FROM_LEFT_EDGE) / GameView.TILE_SIZE

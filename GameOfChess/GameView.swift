@@ -81,9 +81,11 @@ class GameView: UIViewController {
             let sourceIndex = Chessboard.indexOf(origin: sourceOrigin)
             let destIndex = Chessboard.indexOf(origin: destinationOrigin)
             
+            
+            
             // If move is valid: set frame origin to destination, else set it back to source origin
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex){
-                pieceDragged.frame.origin = destinationOrigin
+                myChessGame.move(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex, toOrigin: destinationOrigin)
             }
             else{
                 pieceDragged.frame.origin = sourceOrigin
