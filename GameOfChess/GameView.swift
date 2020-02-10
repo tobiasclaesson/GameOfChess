@@ -86,10 +86,24 @@ class GameView: UIViewController {
             // If move is valid: set frame origin to destination, else set it back to source origin
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex){
                 myChessGame.move(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex, toOrigin: destinationOrigin)
+                
+                myChessGame.nextTurn()
+                updateTurnLabel()
             }
             else{
                 pieceDragged.frame.origin = sourceOrigin
             }
+        }
+    }
+    
+    func updateTurnLabel(){
+        if myChessGame.isWhiteTurn{
+            displayTurnLabel.text = "White's turn!"
+            displayTurnLabel.textColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        }
+        else {
+            displayTurnLabel.text = "Black's turn"
+            displayTurnLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
     }
     

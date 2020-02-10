@@ -12,6 +12,7 @@ import UIKit
 class ChessGame: NSObject {
     
     var chessBoard: Chessboard!
+    var isWhiteTurn = true
     
     init(viewController: GameView) {
         chessBoard = Chessboard.init(viewController: viewController)
@@ -40,9 +41,31 @@ class ChessGame: NSObject {
             return false
         }
         
-        
+        guard isTurnColor(sameAsPiece: piece) else {
+            print("Wrong turn")
+            return false
+        }
         
         return true
+    }
+    
+    func nextTurn() {
+        //sets isWhiteTurn Boool to its opposite
+        isWhiteTurn = !isWhiteTurn
+    }
+    
+    func isTurnColor(sameAsPiece piece: UIChessPiece) -> Bool {
+        if piece.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) {
+            if !isWhiteTurn{
+                return true
+            }
+        }
+        else{
+            if isWhiteTurn{
+                return true
+            }
+        }
+        return false
     }
     
     func isMoveOnBoard(forPieceFrom sourceIndex: BoardIndex, thatGoesTo destIndex: BoardIndex) -> Bool {
