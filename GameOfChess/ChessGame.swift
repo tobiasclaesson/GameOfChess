@@ -46,7 +46,40 @@ class ChessGame: NSObject {
             return false
         }
         
+        return IsNormalMoveValid(forPiece: piece, fromIndex: sourceIndex, toIndex: destIndex)
+    }
+    
+    func IsNormalMoveValid(forPiece piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        guard source != dest else {
+            print("Moving piece on current position")
+            return false
+        }
+        
+        guard !isAttackingAlliedPiece(sourceChessPiece: piece, destIndex: dest) else {
+            print("Attacking Allied Piece")
+            return false
+        }
+        
         return true
+    }
+    
+    func isAttackingAlliedPiece(sourceChessPiece: UIChessPiece, destIndex: BoardIndex) -> Bool {
+        let destPiece: Piece = chessBoard.board[destIndex.row][destIndex.col]
+        
+        //Checking to make sure it is a UIChessPiece and not a ghost
+        //Can i skip this guard statement?
+        guard !(destPiece is Ghost) else {
+            return false
+        }
+        
+        if let destChessPiece = destPiece as? UIChessPiece{
+            //Return true if colors match
+            if sourceChessPiece.color == destChessPiece.color{
+                return true
+            }
+        }
+        
+        return false
     }
     
     func nextTurn() {
