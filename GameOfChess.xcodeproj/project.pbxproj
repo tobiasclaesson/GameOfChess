@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F32047E623F2D0C800277350 /* Luminari-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F32047E523F2CF5D00277350 /* Luminari-Regular.ttf */; };
+		F37B44C623F2C4E30088FE91 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */; };
 		F3C0244E23D70A8D007DA3F9 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0244D23D70A8D007DA3F9 /* Piece.swift */; };
 		F3C0245023D70A9F007DA3F9 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0244F23D70A9F007DA3F9 /* Pawn.swift */; };
 		F3C0245223D70AAF007DA3F9 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0245123D70AAF007DA3F9 /* Knight.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F32047E523F2CF5D00277350 /* Luminari-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Luminari-Regular.ttf"; path = "../../../../../../Downloads/Luminari-Regular.ttf"; sourceTree = "<group>"; };
+		F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		F3C0244D23D70A8D007DA3F9 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		F3C0244F23D70A9F007DA3F9 /* Pawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pawn.swift; sourceTree = "<group>"; };
 		F3C0245123D70AAF007DA3F9 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F32047E423F2CF3500277350 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F32047E523F2CF5D00277350 /* Luminari-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F3FB8A5323D1F8A900F0BF28 = {
 			isa = PBXGroup;
 			children = (
@@ -133,13 +145,15 @@
 			children = (
 				F3FB8A5F23D1F8A900F0BF28 /* AppDelegate.swift */,
 				F3FB8A6123D1F8A900F0BF28 /* SceneDelegate.swift */,
-				F3FB8A6323D1F8A900F0BF28 /* ViewController.swift */,
-				F3FB8A6523D1F8A900F0BF28 /* Main.storyboard */,
 				F3FB8A6823D1F8AA00F0BF28 /* Assets.xcassets */,
 				F3FB8A6A23D1F8AA00F0BF28 /* LaunchScreen.storyboard */,
 				F3FB8A6D23D1F8AA00F0BF28 /* Info.plist */,
+				F32047E423F2CF3500277350 /* Fonts */,
 				F3FB8A8F23D1FA1A00F0BF28 /* Input1View.swift */,
+				F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */,
+				F3FB8A6323D1F8A900F0BF28 /* ViewController.swift */,
 				F3FB8A9123D1FAB000F0BF28 /* Input2View.swift */,
+				F3FB8A6523D1F8A900F0BF28 /* Main.storyboard */,
 				F3FB8A9323D1FD6800F0BF28 /* GameView.swift */,
 				F3C0244D23D70A8D007DA3F9 /* Piece.swift */,
 				F3C0244F23D70A9F007DA3F9 /* Pawn.swift */,
@@ -280,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32047E623F2D0C800277350 /* Luminari-Regular.ttf in Resources */,
 				F3FB8A6C23D1F8AA00F0BF28 /* LaunchScreen.storyboard in Resources */,
 				F3FB8A6923D1F8AA00F0BF28 /* Assets.xcassets in Resources */,
 				F3FB8A6723D1F8A900F0BF28 /* Main.storyboard in Resources */,
@@ -321,6 +336,7 @@
 				F3C0245223D70AAF007DA3F9 /* Knight.swift in Sources */,
 				F3FB8A6023D1F8A900F0BF28 /* AppDelegate.swift in Sources */,
 				F3C0246223D70B89007DA3F9 /* ExtensionUIChessPiece.swift in Sources */,
+				F37B44C623F2C4E30088FE91 /* ExtensionUIView.swift in Sources */,
 				F3C0246623D70BDF007DA3F9 /* StartScreen.swift in Sources */,
 				F3FB8A6223D1F8A900F0BF28 /* SceneDelegate.swift in Sources */,
 				F3FB8A9423D1FD6800F0BF28 /* GameView.swift in Sources */,

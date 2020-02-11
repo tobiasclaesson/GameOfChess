@@ -24,6 +24,9 @@ class GameView: UIViewController {
     //Space between top and chess board
     static var SPACE_FROM_TOP_EDGE = 264
     static var TILE_SIZE = 46
+    
+    var playerOneName = ""
+    var playerTwoName = ""
 
     var myChessGame: ChessGame!
     var chessPieces: [UIChessPiece]!
