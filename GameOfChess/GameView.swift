@@ -13,6 +13,7 @@ class GameView: UIViewController {
     
     @IBOutlet weak var displayTurnLabel: UILabel!
     @IBOutlet weak var displayCheckLabel: UILabel!
+    
     @IBOutlet var panOUTLET: UIPanGestureRecognizer!
     var pieceDragged: UIChessPiece!
     //Source coordinates of topleft point
@@ -117,7 +118,7 @@ class GameView: UIViewController {
         // set new center, old coordninate + pan length
         piece.center = CGPoint(x: translation.x + piece.center.x, y: translation.y + piece.center.y)
         
-        // Video 4, makes sure that the peice stays on our finger when we drag it
+        // makes sure that the peice stays on our finger when we drag it
         gestureRecognizer.setTranslation(CGPoint.zero, in: view)
     }
     

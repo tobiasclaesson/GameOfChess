@@ -40,6 +40,8 @@ class Chessboard: NSObject {
         
     }
     
+    // Removes constansts, divides x and y with tile size to find out wich row and col it is on the board.
+    // Return a BoardIndex from a frames coordinates
     static func indexOf(origin: CGPoint) -> BoardIndex {
         let row = (Int(origin.y) - GameView.SPACE_FROM_TOP_EDGE) / GameView.TILE_SIZE
         let col = (Int(origin.x) - GameView.SPACE_FROM_LEFT_EDGE) / GameView.TILE_SIZE
@@ -47,7 +49,7 @@ class Chessboard: NSObject {
         return BoardIndex(row: row, col: col)
     }
     
-    //Return a frame of a specific index (Kind of a chessboard but in logic instead of graphic)
+    //Return a frame of a BoardIndex
     static func getFrame(forRow row: Int, forCol col: Int) -> CGRect{
         let x = CGFloat(GameView.SPACE_FROM_LEFT_EDGE + (col * GameView.TILE_SIZE))
         let y = CGFloat(GameView.SPACE_FROM_TOP_EDGE + (row * GameView.TILE_SIZE))
