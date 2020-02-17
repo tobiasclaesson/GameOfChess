@@ -1,0 +1,57 @@
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "6TS-Yw-huf"; */
+"6TS-Yw-huf.normalTitle" = "Confirm";
+
+/* Class = "UIButton"; normalTitle = "Play Game"; ObjectID = "9Xc-tD-yyp"; */
+"9Xc-tD-yyp.normalTitle" = "Play Game";
+
+/* Class = "UITextField"; placeholder = "Write here..."; ObjectID = "BSx-50-urV"; */
+"BSx-50-urV.placeholder" = "Write here...";
+
+/* Class = "UILabel"; text = "Player 2"; ObjectID = "BrC-4I-Hvf"; */
+"BrC-4I-Hvf.text" = "Player 2";
+
+/* Class = "UILabel"; text = "Game"; ObjectID = "DMe-FG-cUC"; */
+"DMe-FG-cUC.text" = "Game";
+
+/* Class = "UILabel"; text = "Player 1"; ObjectID = "JJa-la-Ub1"; */
+"JJa-la-Ub1.text" = "Player 1";
+
+/* Class = "UILabel"; text = "Write Your Name:"; ObjectID = "NAD-tE-5HC"; */
+"NAD-tE-5HC.text" = "Write Your Name:";
+
+/* Class = "UILabel"; text = "Write Your Name:"; ObjectID = "NQy-LK-NHl"; */
+"NQy-LK-NHl.text" = "Write Your Name:";
+
+/* Class = "UILabel"; text = "White Turn!"; ObjectID = "OOI-qW-Uo0"; */
+"OOI-qW-Uo0.text" = "White Turn!";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "PE5-ww-I5C"; */
+"PE5-ww-I5C.normalTitle" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "R19-1Z-LDs"; */
+"R19-1Z-LDs.normalTitle" = "Confirm";
+
+/* Class = "UILabel"; text = "of"; ObjectID = "Tl2-7c-Xfa"; */
+"Tl2-7c-Xfa.text" = "of";
+
+/* Class = "UILabel"; text = "GoC"; ObjectID = "jc2-dM-FKS"; */
+"jc2-dM-FKS.text" = "GoC";
+
+/* Class = "UIButton"; normalTitle = "Highscore"; ObjectID = "mEk-o1-3xz"; */
+"mEk-o1-3xz.normalTitle" = "Highscore";
+
+/* Class = "UIButton"; normalTitle = "Quit"; ObjectID = "nJR-mB-hz9"; */
+"nJR-mB-hz9.normalTitle" = "Quit";
+
+/* Class = "UITextField"; placeholder = "Write here..."; ObjectID = "suz-fZ-aJl"; */
+"suz-fZ-aJl.placeholder" = "Write here...";
+
+/* Class = "UILabel"; text = "GoC"; ObjectID = "u8x-O2-uf5"; */
+"u8x-O2-uf5.text" = "GoC";
+
+/* Class = "UIButton"; normalTitle = "Back"; ObjectID = "vIY-kp-Zkk"; */
+"vIY-kp-Zkk.normalTitle" = "Back";
+
+/* Class = "UILabel"; text = "Chess"; ObjectID = "zek-Da-kXF"; */
+"zek-Da-kXF.text" = "Chess";

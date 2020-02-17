@@ -60,8 +60,49 @@ class ChessGame: NSObject {
             return false
         }
         
+        switch piece {
+        case is Pawn:
+            if let pawn = piece as? Pawn{
+                return isMoveValid(forPawn: pawn, fromIndex: source, toIndex: dest)
+            }
+        case is Rook, is Bishop, is Queen:
+            return isMoveValid(forRookOrBishopOrQueen: piece, fromIndex: source, toIndex: dest)
+        case is Knight:
+            if let knight = piece as? Knight{
+                if !knight.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                    return false
+                }
+            }
+        case is King:
+            if let king = piece as? King{
+                return isMoveValid(forKing: king, fromIndex: source, toIndex: dest)
+            }
+        default:
+            break
+        }
+        
         return true
     }
+    
+    func isMoveValid(forPawn pawn: Pawn, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        
+        if !pawn.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+            return false
+        }
+        
+        return true
+    }
+    
+    func isMoveValid(forRookOrBishopOrQueen piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        
+        return true
+    }
+    
+    func isMoveValid(forKing king: King, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        
+        return true
+    }
+    
     
     func isAttackingAlliedPiece(sourceChessPiece: UIChessPiece, destIndex: BoardIndex) -> Bool {
         let destPiece: Piece = chessBoard.board[destIndex.row][destIndex.col]

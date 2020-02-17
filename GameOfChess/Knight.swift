@@ -37,7 +37,9 @@ class Knight: UIChessPiece {
         
     }
     
-    
+    func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        return true
+    }
     
     
     
