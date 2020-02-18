@@ -89,8 +89,42 @@ class ChessGame: NSObject {
         if !pawn.doesMoveSeemFine(fromIndex: source, toIndex: dest){
             return false
         }
+        //Not attacking
+        if source.col == dest.col{
+            
+            //Advance by 2
+            if pawn.triesToAdvanceBy2{
+                var moveForward = 0
+                
+                
+                if pawn.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1){
+                    moveForward = 1
+                }
+                else{
+                    moveForward = -1
+                }
+                //Checks if path is Ghosts
+                if chessBoard.board[dest.row][dest.col] is Ghost && chessBoard.board[dest.row - moveForward][dest.col] is Ghost{
+                    return true
+                }
+            }
+            //Advance by 1
+            else{
+                if chessBoard.board[dest.row][dest.col] is Ghost{
+                    return true
+                }
+            }
+        }
+        //Attacking
+        else{
+            
+            //Checks that destination contains anything but i Ghost piece
+            if !(chessBoard.board[dest.row][dest.col] is Ghost){
+                return true
+            }
+        }
         
-        return true
+        return false
     }
     
     func isMoveValid(forRookOrBishopOrQueen piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {

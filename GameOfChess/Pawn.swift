@@ -39,6 +39,7 @@ class Pawn: UIChessPiece {
         
     }
     
+    //Pawn walking pattern. Does not care about the state of the board.
     func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         //check advance by 2
         if source.col == dest.col{
