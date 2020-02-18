@@ -128,6 +128,52 @@ class ChessGame: NSObject {
     }
     
     func isMoveValid(forRookOrBishopOrQueen piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        switch piece{
+        case is Rook:
+            if let rook = piece as? Rook{
+                if !rook.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                    return false
+                }
+            }
+        case is Bishop:
+            if let bishop = piece as? Bishop{
+                if !bishop.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                    return false
+                }
+            }
+        default:
+            if let queen = piece as? Queen{
+                if !queen.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                    return false
+                }
+            }
+        }
+        
+        var increaseRow = 0
+        //Check that difference in rows is not 0
+        if dest.row - source.row != 0{
+            //sets increse row to 1 or -1 depending on direction
+            increaseRow = (dest.row - source.row) / abs(dest.row - source.row)
+        }
+        
+        var increaseCol = 0
+        
+        if dest.col - source.col != 0{
+            increaseCol = (dest.col - source.col) / abs(dest.col - source.col)
+        }
+        
+        var nextRow = source.row + increaseRow
+        var nextCol = source.col + increaseCol
+        
+        //loop until nextRow and nextCol == dest row and col
+        //Checks if path is clear
+        while nextRow != dest.row || nextCol != dest.col{
+            if !(chessBoard.board[nextRow][nextCol] is Ghost){
+                return false
+            }
+            nextRow += increaseRow
+            nextCol += increaseCol
+        }
         
         return true
     }
