@@ -38,7 +38,17 @@ class King: UIChessPiece {
     }
     
     func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
-        return true
+        
+        let diffInRows = abs(dest.row - source.row)
+        let diffInCols = abs(dest.col - source.col)
+        
+        //return true if moving between 0 to 1 units in row or/ and col
+        if case 0...1 = diffInRows{
+            if case 0...1 = diffInCols{
+                return true
+            }
+        }
+        return false
     }
     
     

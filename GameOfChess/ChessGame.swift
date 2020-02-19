@@ -13,9 +13,37 @@ class ChessGame: NSObject {
     
     var chessBoard: Chessboard!
     var isWhiteTurn = true
+    var winner: String?
     
     init(viewController: GameView) {
         chessBoard = Chessboard.init(viewController: viewController)
+    }
+    
+    func isGameOver() -> Bool {
+        
+        if didSomebodyWin() {
+            return true
+        }
+        
+        return false
+        
+    }
+    
+    func didSomebodyWin() -> Bool {
+        
+        //check if white king is alive
+        if !chessBoard.vc.chessPieces.contains(chessBoard.whiteKing){
+            winner = "Black"
+            return true
+        }
+        
+        //check if black king is alive
+        if !chessBoard.vc.chessPieces.contains(chessBoard.blackKing){
+            winner = "White"
+            return true
+        }
+        
+        return false
     }
     
     func move(piece chessPieceToMove: UIChessPiece, fromIndex sourceIndex: BoardIndex, toIndex destIndex: BoardIndex, toOrigin destOrigin: CGPoint){
@@ -180,9 +208,57 @@ class ChessGame: NSObject {
     
     func isMoveValid(forKing king: King, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         
+        if !king.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+            return false
+        }
+        
+        if isOpponentKing(nearKing: king, thatGoesTo: dest){
+            return false
+        }
+        
         return true
     }
     
+    func isOpponentKing(nearKing movingKing: King, thatGoesTo destIndexOfMovingKing: BoardIndex) -> Bool {
+        
+        var opponentKing: King
+        
+        //opponentKing == the not moving king
+        if movingKing == chessBoard.whiteKing{
+            opponentKing = chessBoard.blackKing
+        }
+        else{
+            opponentKing = chessBoard.whiteKing
+        }
+        
+        var index: BoardIndex?
+        
+        
+        //Find opponentKing on the board, get the index
+        for row in 0..<chessBoard.ROWS{
+            for col in 0..<chessBoard.COLS{
+                if let king = chessBoard.board[row][col] as? King, king == opponentKing{
+                    index = BoardIndex(row: row, col: col)
+                }
+            }
+        }
+        
+        if let indexOfOpponentKing = index as? BoardIndex{
+        
+            //Get absoulute difference between kings
+            let diffInRows = abs(indexOfOpponentKing.row - destIndexOfMovingKing.row)
+            let diffInCols = abs(indexOfOpponentKing.col - destIndexOfMovingKing.col)
+            
+            //If they are to close, then move is invalid
+            if case 0...1 = diffInRows{
+                if case 0...1 = diffInCols{
+                    return true
+                }
+            }
+        }
+        
+        return false
+    }
     
     func isAttackingAlliedPiece(sourceChessPiece: UIChessPiece, destIndex: BoardIndex) -> Bool {
         let destPiece: Piece = chessBoard.board[destIndex.row][destIndex.col]

@@ -91,12 +91,49 @@ class GameView: UIViewController {
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex){
                 myChessGame.move(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex, toOrigin: destinationOrigin)
                 
+                //check if some1 won
+                if myChessGame.isGameOver(){
+                    displayWinner()
+                    return
+                }
+                
                 myChessGame.nextTurn()
                 updateTurnLabel()
             }
             else{
                 pieceDragged.frame.origin = sourceOrigin
             }
+        }
+    }
+    
+    func displayWinner(){
+        if let winner = myChessGame.winner{
+            let winnerBox = UIAlertController(title: "Game Over", message: "\(winner) won", preferredStyle: .alert)
+            
+            winnerBox.addAction(UIAlertAction(title: "Back to main menu", style: .default, handler: {
+                action in
+                //set up seg to main menu !!!!!!!!!!!!!!!!!!!!!!
+                //self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+            }))
+            
+            winnerBox.addAction(UIAlertAction(title: "Rematch", style: .default, handler: {
+                action in
+                //Clear screen, pieces array, board matrix
+                for chessPiece in self.chessPieces{
+                    self.myChessGame.chessBoard.remove(piece: chessPiece)
+                }
+                
+                //Create new game
+                self.myChessGame = ChessGame(viewController: self)
+                
+                //Update labels with game status
+                self.updateTurnLabel()
+                self.displayCheckLabel.text = nil
+                
+                
+            }))
+            
+            self.present(winnerBox, animated: true, completion: nil)
         }
     }
     
