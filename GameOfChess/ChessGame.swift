@@ -19,6 +19,36 @@ class ChessGame: NSObject {
         chessBoard = Chessboard.init(viewController: viewController)
     }
     
+    func getPlayerChecked() -> String?{
+        guard let whiteKingIndex = chessBoard.getIndex(forChessPiece: chessBoard.whiteKing) else {return nil}
+        guard let blackKingIndex = chessBoard.getIndex(forChessPiece: chessBoard.blackKing) else {return nil}
+        
+        //check every chesspiece on the board if it can attack the kings
+        for row in 0..<chessBoard.ROWS{
+            for col in 0..<chessBoard.COLS{
+                if let chessPiece = chessBoard.board[row][col] as? UIChessPiece{
+                    
+                    let chessPieceIndex = BoardIndex(row: row, col: col)
+                    
+                    //check attacks towards white king
+                    if chessPiece.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1){
+                        if IsNormalMoveValid(forPiece: chessPiece, fromIndex: chessPieceIndex, toIndex: whiteKingIndex){
+                            return "White"
+                        }
+                    }
+                    //Check attacks towards black king
+                    else{
+                        if IsNormalMoveValid(forPiece: chessPiece, fromIndex: chessPieceIndex, toIndex: blackKingIndex){
+                            return "Black"
+                        }
+                    }
+                }
+            }
+        }
+        //return nil if no1 is under check
+        return nil
+    }
+    
     func isGameOver() -> Bool {
         
         if didSomebodyWin() {

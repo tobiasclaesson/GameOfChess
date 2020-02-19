@@ -97,6 +97,8 @@ class GameView: UIViewController {
                     return
                 }
                 
+                displayCheck()
+                
                 myChessGame.nextTurn()
                 updateTurnLabel()
             }
@@ -104,6 +106,15 @@ class GameView: UIViewController {
                 pieceDragged.frame.origin = sourceOrigin
             }
         }
+    }
+    
+    func displayCheck(){
+        guard let playerChecked = myChessGame.getPlayerChecked() else {
+            displayCheckLabel.text = nil
+            return
+        }
+        
+        displayCheckLabel.text = playerChecked + " is in check"
     }
     
     func displayWinner(){
