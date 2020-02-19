@@ -11,6 +11,8 @@ import UIKit
 
 class GameView: UIViewController {
     
+    let segToMain = "unwindToMainMenu"
+    
     @IBOutlet weak var displayTurnLabel: UILabel!
     @IBOutlet weak var displayCheckLabel: UILabel!
     
@@ -34,6 +36,8 @@ class GameView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.setGradientBackground(firstColor: #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1), secondColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         
         chessPieces = []
         myChessGame = ChessGame.init(viewController: self)
@@ -97,14 +101,44 @@ class GameView: UIViewController {
                     return
                 }
                 
-                displayCheck()
+                if shouldPromotePawn(){
+                    promptForPawnPromotion()
+                }
+                else{
+                    resumeGame()
+                }
                 
-                myChessGame.nextTurn()
-                updateTurnLabel()
+                
             }
             else{
                 pieceDragged.frame.origin = sourceOrigin
             }
+        }
+    }
+    
+    func resumeGame(){
+        //display check if there are any
+        displayCheck()
+        
+        
+        myChessGame.nextTurn()
+        updateTurnLabel()
+    }
+    
+    func promote(pawn pawnToBePromoted: Pawn, into option: String){
+        
+    }
+    
+    func promptForPawnPromotion(){
+        
+    }
+    
+    func shouldPromotePawn() -> Bool {
+        if myChessGame.getPawnToBePromoted() != nil{
+            return true
+        }
+        else {
+            return false
         }
     }
     
@@ -123,8 +157,8 @@ class GameView: UIViewController {
             
             winnerBox.addAction(UIAlertAction(title: "Back to main menu", style: .default, handler: {
                 action in
-                //set up seg to main menu !!!!!!!!!!!!!!!!!!!!!!
-                //self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
+                //perform seg to main menu
+                self.performSegue(withIdentifier: self.segToMain, sender: self)
             }))
             
             winnerBox.addAction(UIAlertAction(title: "Rematch", style: .default, handler: {
@@ -151,11 +185,11 @@ class GameView: UIViewController {
     func updateTurnLabel(){
         if myChessGame.isWhiteTurn{
             displayTurnLabel.text = "White's turn!"
-            displayTurnLabel.textColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+            displayTurnLabel.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         }
         else {
             displayTurnLabel.text = "Black's turn"
-            displayTurnLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            displayTurnLabel.textColor = #colorLiteral(red: 0.8374180198, green: 0.8374378085, blue: 0.8374271393, alpha: 1)
         }
     }
     
@@ -171,8 +205,7 @@ class GameView: UIViewController {
     }
     
     
-    @IBAction func unwindToMain(_ sender: UIStoryboardSegue) {
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func quitButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: self.segToMain, sender: self)
     }
-    
 }

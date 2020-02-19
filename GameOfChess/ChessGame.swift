@@ -19,6 +19,21 @@ class ChessGame: NSObject {
         chessBoard = Chessboard.init(viewController: viewController)
     }
     
+    func getPawnToBePromoted() -> Pawn? {
+        for chessPiece in chessBoard.vc.chessPieces{
+            //check all pawns in the array
+            if let pawn = chessPiece as? Pawn{
+                //get index of the pawn
+                let pawnIndex = Chessboard.indexOf(origin: pawn.frame.origin)
+                //Check if the pawn is on the first or last row of the board
+                if pawnIndex.row == 0 || pawnIndex.row == 7{
+                    return pawn
+                }
+            }
+        }
+        return nil
+    }
+    
     func getPlayerChecked() -> String?{
         guard let whiteKingIndex = chessBoard.getIndex(forChessPiece: chessBoard.whiteKing) else {return nil}
         guard let blackKingIndex = chessBoard.getIndex(forChessPiece: chessBoard.blackKing) else {return nil}

@@ -239,7 +239,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Quit"/>
                                 <connections>
-                                    <action selector="unwindToMain:" destination="H4B-Nw-a8X" eventType="touchUpInside" id="3Yv-bc-whp"/>
+                                    <action selector="quitButtonPressed:" destination="H4B-Nw-a8X" eventType="touchUpInside" id="qj6-Td-k1r"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3NT-ON-WZw">
@@ -563,14 +563,14 @@
                                 <color key="backgroundColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="White Turn!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOI-qW-Uo0">
-                                <rect key="frame" x="103" y="177" width="209" height="63"/>
+                                <rect key="frame" x="103" y="203" width="209" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FjC-nT-88L">
-                                <rect key="frame" x="109" y="647" width="197" height="36"/>
+                                <rect key="frame" x="69" y="167" width="276" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -588,9 +588,11 @@
                         <outlet property="displayCheckLabel" destination="FjC-nT-88L" id="r7w-Om-Yge"/>
                         <outlet property="displayTurnLabel" destination="OOI-qW-Uo0" id="P9z-Y0-ee9"/>
                         <outlet property="panOUTLET" destination="3Kq-gg-zlH" id="8yW-UH-DjA"/>
+                        <segue destination="ohw-wQ-7Ot" kind="unwind" identifier="unwindToMainMenu" unwindAction="unwindWithSegue:" id="7yf-l5-z3y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atY-Wj-Xel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ohw-wQ-7Ot" userLabel="Exit" sceneMemberID="exit"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="3Kq-gg-zlH"/>
             </objects>
             <point key="canvasLocation" x="2405.7971014492755" y="137.94642857142856"/>
