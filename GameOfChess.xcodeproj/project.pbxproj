@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		F32047E623F2D0C800277350 /* Luminari-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F32047E523F2CF5D00277350 /* Luminari-Regular.ttf */; };
 		F37B44C623F2C4E30088FE91 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */; };
+		F3BD21A123FE7B3A003FF9D9 /* HighscoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */; };
+		F3BD21A323FE7EE4003FF9D9 /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BD21A223FE7EE4003FF9D9 /* Highscore.swift */; };
+		F3BD21A623FE81E2003FF9D9 /* HighscoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BD21A423FE81E2003FF9D9 /* HighscoreCell.swift */; };
+		F3BD21A723FE81E2003FF9D9 /* HighscoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BD21A523FE81E2003FF9D9 /* HighscoreCell.xib */; };
 		F3C0244E23D70A8D007DA3F9 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0244D23D70A8D007DA3F9 /* Piece.swift */; };
 		F3C0245023D70A9F007DA3F9 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0244F23D70A9F007DA3F9 /* Pawn.swift */; };
 		F3C0245223D70AAF007DA3F9 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0245123D70AAF007DA3F9 /* Knight.swift */; };
@@ -55,6 +59,10 @@
 /* Begin PBXFileReference section */
 		F32047E523F2CF5D00277350 /* Luminari-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Luminari-Regular.ttf"; path = "../../../../../../Downloads/Luminari-Regular.ttf"; sourceTree = "<group>"; };
 		F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
+		F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreView.swift; sourceTree = "<group>"; };
+		F3BD21A223FE7EE4003FF9D9 /* Highscore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
+		F3BD21A423FE81E2003FF9D9 /* HighscoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreCell.swift; sourceTree = "<group>"; };
+		F3BD21A523FE81E2003FF9D9 /* HighscoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighscoreCell.xib; sourceTree = "<group>"; };
 		F3C0244D23D70A8D007DA3F9 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		F3C0244F23D70A9F007DA3F9 /* Pawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pawn.swift; sourceTree = "<group>"; };
 		F3C0245123D70AAF007DA3F9 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
@@ -152,7 +160,11 @@
 				F3FB8A8F23D1FA1A00F0BF28 /* Input1View.swift */,
 				F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */,
 				F3FB8A6323D1F8A900F0BF28 /* ViewController.swift */,
+				F3BD21A223FE7EE4003FF9D9 /* Highscore.swift */,
+				F3BD21A423FE81E2003FF9D9 /* HighscoreCell.swift */,
+				F3BD21A523FE81E2003FF9D9 /* HighscoreCell.xib */,
 				F3FB8A9123D1FAB000F0BF28 /* Input2View.swift */,
+				F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */,
 				F3FB8A6523D1F8A900F0BF28 /* Main.storyboard */,
 				F3FB8A9323D1FD6800F0BF28 /* GameView.swift */,
 				F3C0244D23D70A8D007DA3F9 /* Piece.swift */,
@@ -298,6 +310,7 @@
 				F3FB8A6C23D1F8AA00F0BF28 /* LaunchScreen.storyboard in Resources */,
 				F3FB8A6923D1F8AA00F0BF28 /* Assets.xcassets in Resources */,
 				F3FB8A6723D1F8A900F0BF28 /* Main.storyboard in Resources */,
+				F3BD21A723FE81E2003FF9D9 /* HighscoreCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,9 +340,12 @@
 				F3C0245823D70AE3007DA3F9 /* King.swift in Sources */,
 				F3C0245C23D70B32007DA3F9 /* Ghost.swift in Sources */,
 				F3C0245A23D70AEC007DA3F9 /* Queen.swift in Sources */,
+				F3BD21A123FE7B3A003FF9D9 /* HighscoreView.swift in Sources */,
 				F3FB8A9223D1FAB000F0BF28 /* Input2View.swift in Sources */,
 				F3C0245E23D70B50007DA3F9 /* ChessGame.swift in Sources */,
+				F3BD21A323FE7EE4003FF9D9 /* Highscore.swift in Sources */,
 				F3C0245623D70AC8007DA3F9 /* Bishop.swift in Sources */,
+				F3BD21A623FE81E2003FF9D9 /* HighscoreCell.swift in Sources */,
 				F3C0245023D70A9F007DA3F9 /* Pawn.swift in Sources */,
 				F3C0246023D70B65007DA3F9 /* ChessBoard.swift in Sources */,
 				F3C0245423D70ABC007DA3F9 /* Rook.swift in Sources */,

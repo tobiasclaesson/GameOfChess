@@ -33,6 +33,11 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: segueToInput1View, sender: self)
     }
     
+    @IBAction func highscoreButtonClick(_ sender: Any) {
+        performSegue(withIdentifier: segueToHighscoreView, sender: self)
+    }
+    
+    
     func styleButton(buttonIdentifier button: UIButton){
 //        button.layer.borderColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
 //        button.layer.borderWidth = 0.5

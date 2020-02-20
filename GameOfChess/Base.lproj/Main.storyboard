@@ -31,6 +31,9 @@
                                 <state key="normal" title="Highscore">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="highscoreButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qSF-BI-BKv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xc-tD-yyp">
                                 <rect key="frame" x="42" y="459" width="330" height="87"/>
@@ -72,11 +75,82 @@
                         <outlet property="highscoreButton" destination="mEk-o1-3xz" id="pG8-Qi-CGD"/>
                         <outlet property="playButton" destination="9Xc-tD-yyp" id="Tjh-Sh-axy"/>
                         <segue destination="pbU-uL-Uc9" kind="presentation" identifier="segueToInput1View" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="HZp-Ve-Ahk"/>
+                        <segue destination="w29-E3-T5z" kind="presentation" identifier="segueToHighscoreView" modalPresentationStyle="fullScreen" id="Psd-xo-XQu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Highscore View-->
+        <scene sceneID="4Cv-Ev-neY">
+            <objects>
+                <viewController id="w29-E3-T5z" customClass="HighscoreView" customModule="GameOfChess" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2VM-HG-22s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xkb-j2-f5Z">
+                                <rect key="frame" x="0.0" y="194" width="414" height="668"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellId" rowHeight="120" id="fd1-FS-Du6">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fd1-FS-Du6" id="fTd-k3-yyk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="w29-E3-T5z" id="5iR-HK-WAb"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Highscore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKd-Wt-sfQ">
+                                <rect key="frame" x="20" y="132" width="374" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="50"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GoC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6d-gD-IsO">
+                                <rect key="frame" x="169" y="44" width="76" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="38"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6P-hB-9rw">
+                                <rect key="frame" x="19" y="46" width="68" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Luminari-Regular" family="Luminari" pointSize="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="pbU-uL-Uc9" eventType="touchUpInside" id="JGZ-dE-EeN"/>
+                                    <action selector="backButtonPressed:" destination="w29-E3-T5z" eventType="touchUpInside" id="R9x-ot-aWN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QQp-vP-rMH" firstAttribute="trailing" secondItem="xkb-j2-f5Z" secondAttribute="trailing" id="Fi6-32-6bO"/>
+                            <constraint firstItem="QQp-vP-rMH" firstAttribute="bottom" secondItem="xkb-j2-f5Z" secondAttribute="bottom" id="S0z-6W-QRz"/>
+                            <constraint firstItem="xkb-j2-f5Z" firstAttribute="top" secondItem="QQp-vP-rMH" secondAttribute="top" constant="150" id="mLj-mo-uiv"/>
+                            <constraint firstItem="xkb-j2-f5Z" firstAttribute="leading" secondItem="QQp-vP-rMH" secondAttribute="leading" id="rgc-fe-5ns"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QQp-vP-rMH"/>
+                    </view>
+                    <connections>
+                        <outlet property="highscoreTableView" destination="xkb-j2-f5Z" id="eOd-RF-AuF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIf-E0-ZCZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="881.91964285714278"/>
         </scene>
         <!--Input1 View-->
         <scene sceneID="zBQ-wT-GgG">
