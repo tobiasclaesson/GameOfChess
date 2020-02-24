@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>439004299521-2ulck90juartndalp5jsibsro1fl3u41.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.439004299521-2ulck90juartndalp5jsibsro1fl3u41</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBVTCMhixWTLh9Iqj9yiCVF82YpWWtNUas</string>
+	<key>GCM_SENDER_ID</key>
+	<string>439004299521</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.GameOfChess</string>
+	<key>PROJECT_ID</key>
+	<string>chessgametc</string>
+	<key>STORAGE_BUCKET</key>
+	<string>chessgametc.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:439004299521:ios:e726c3d343968a72ed1b00</string>
+	<key>DATABASE_URL</key>
+	<string>https://chessgametc.firebaseio.com</string>
+</dict>
+</plist>

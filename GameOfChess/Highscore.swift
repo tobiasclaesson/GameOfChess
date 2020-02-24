@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct Highscore{
     var playerName: String
@@ -17,7 +18,16 @@ struct Highscore{
         self.numberOfMoves = numberOfMoves
     }
     
+    init (snapshot: QueryDocumentSnapshot) {
+        let snapshotValue = snapshot.data() as [String : Any]
+        playerName = snapshotValue["playerName"] as! String
+        numberOfMoves = snapshotValue["moves"] as! Int
+        
+    }
     
-    
+    func toDict() -> [String : Any] {
+        return ["playerName" : playerName,
+                "moves" : numberOfMoves]
+    }
     
 }

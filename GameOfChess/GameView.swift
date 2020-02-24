@@ -8,8 +8,11 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class GameView: UIViewController {
+    
+    var db : Firestore!
     
     let segToMain = "unwindToMainMenu"
     
@@ -28,8 +31,11 @@ class GameView: UIViewController {
     static var SPACE_FROM_TOP_EDGE = 264
     static var TILE_SIZE = 46
     
-    var playerOneName = ""
-    var playerTwoName = ""
+    var playerOneName = "TestPlayer1"
+    var playerTwoName = "TestPlayer2"
+    var players = [String]()
+    var currentPlayer = ""
+    var moves = 0
 
     var myChessGame: ChessGame!
     var chessPieces: [UIChessPiece]!
@@ -41,6 +47,8 @@ class GameView: UIViewController {
         
         chessPieces = []
         myChessGame = ChessGame.init(viewController: self)
+        players = [playerOneName, playerTwoName]
+        currentPlayer = playerOneName
         
     }
     //Touch on screen has began
@@ -95,6 +103,10 @@ class GameView: UIViewController {
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex){
                 myChessGame.move(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex, toOrigin: destinationOrigin)
                 
+                if pieceDragged.color != #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1){
+                    moves += 1
+                }
+                
                 //check if some1 won
                 if myChessGame.isGameOver(){
                     displayWinner()
@@ -105,7 +117,8 @@ class GameView: UIViewController {
                     promptForPawnPromotion()
                 }
                 else{
-                    resumeGame()
+                    
+                    resumeGame(piece: pieceDragged)
                 }
                 
                 
@@ -116,11 +129,16 @@ class GameView: UIViewController {
         }
     }
     
-    func resumeGame(){
+    func resumeGame(piece: UIChessPiece){
         //display check if there are any
         displayCheck()
         
-        
+        for player in players{
+            if player != currentPlayer{
+                currentPlayer = player
+                break
+            }
+        }
         myChessGame.nextTurn()
         updateTurnLabel()
     }
@@ -153,6 +171,9 @@ class GameView: UIViewController {
     
     func displayWinner(){
         if let winner = myChessGame.winner{
+            
+            addHighscoreToDB()
+            
             let winnerBox = UIAlertController(title: "Game Over", message: "\(winner) won", preferredStyle: .alert)
             
             winnerBox.addAction(UIAlertAction(title: "Back to main menu", style: .default, handler: {
@@ -202,6 +223,16 @@ class GameView: UIViewController {
         
         // makes sure that the peice stays on our finger when we drag it
         gestureRecognizer.setTranslation(CGPoint.zero, in: view)
+    }
+    
+    func addHighscoreToDB(){
+        db = Firestore.firestore()
+        
+        let itemRef = db.collection("highscores")
+        
+        let highscore = Highscore(playerName: currentPlayer, numberOfMoves: moves)
+        
+        itemRef.addDocument(data: highscore.toDict())
     }
     
     

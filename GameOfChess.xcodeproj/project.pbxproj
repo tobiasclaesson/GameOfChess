@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4FAC58EE0A5D33B6D5785D /* Pods_GameOfChessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BC5FC5DE49F323A370F549 /* Pods_GameOfChessTests.framework */; };
+		4862E0B91CB3C6413FCA3624 /* Pods_GameOfChess_GameOfChessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7FC56D56B2D77E75C67BF53 /* Pods_GameOfChess_GameOfChessUITests.framework */; };
+		7421C9B05708FA913FCDF131 /* Pods_GameOfChess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58BAE88E19A51965C274B1DA /* Pods_GameOfChess.framework */; };
 		F32047E623F2D0C800277350 /* Luminari-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F32047E523F2CF5D00277350 /* Luminari-Regular.ttf */; };
 		F37B44C623F2C4E30088FE91 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */; };
 		F3BD21A123FE7B3A003FF9D9 /* HighscoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */; };
@@ -26,6 +29,7 @@
 		F3C0246223D70B89007DA3F9 /* ExtensionUIChessPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0246123D70B89007DA3F9 /* ExtensionUIChessPiece.swift */; };
 		F3C0246423D70B97007DA3F9 /* BoardIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0246323D70B97007DA3F9 /* BoardIndex.swift */; };
 		F3C0246623D70BDF007DA3F9 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0246523D70BDF007DA3F9 /* StartScreen.swift */; };
+		F3EA041123FE966D0077E201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3EA041023FE966D0077E201 /* GoogleService-Info.plist */; };
 		F3FB8A6023D1F8A900F0BF28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB8A5F23D1F8A900F0BF28 /* AppDelegate.swift */; };
 		F3FB8A6223D1F8A900F0BF28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB8A6123D1F8A900F0BF28 /* SceneDelegate.swift */; };
 		F3FB8A6423D1F8A900F0BF28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB8A6323D1F8A900F0BF28 /* ViewController.swift */; };
@@ -57,6 +61,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0926E8BDFC42BBCF2098E8F1 /* Pods-GameOfChess-GameOfChessUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfChess-GameOfChessUITests.release.xcconfig"; path = "Target Support Files/Pods-GameOfChess-GameOfChessUITests/Pods-GameOfChess-GameOfChessUITests.release.xcconfig"; sourceTree = "<group>"; };
+		166C80CED7AB32EF9EF3D4DD /* Pods-GameOfChessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfChessTests.debug.xcconfig"; path = "Target Support Files/Pods-GameOfChessTests/Pods-GameOfChessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1781044B5B34C997BC9ABEB1 /* Pods-GameOfChess-GameOfChessUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfChess-GameOfChessUITests.debug.xcconfig"; path = "Target Support Files/Pods-GameOfChess-GameOfChessUITests/Pods-GameOfChess-GameOfChessUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		48F7D817D9B3BD20025DAB75 /* Pods-GameOfChess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfChess.release.xcconfig"; path = "Target Support Files/Pods-GameOfChess/Pods-GameOfChess.release.xcconfig"; sourceTree = "<group>"; };
+		58BAE88E19A51965C274B1DA /* Pods_GameOfChess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfChess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A46F5934D5B77B41E804CE3 /* Pods-GameOfChessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfChessTests.release.xcconfig"; path = "Target Support Files/Pods-GameOfChessTests/Pods-GameOfChessTests.release.xcconfig"; sourceTree = "<group>"; };
+		A7FC56D56B2D77E75C67BF53 /* Pods_GameOfChess_GameOfChessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfChess_GameOfChessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD3809DEA9C946B99440B764 /* Pods-GameOfChess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOfChess.debug.xcconfig"; path = "Target Support Files/Pods-GameOfChess/Pods-GameOfChess.debug.xcconfig"; sourceTree = "<group>"; };
+		C0BC5FC5DE49F323A370F549 /* Pods_GameOfChessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOfChessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F32047E523F2CF5D00277350 /* Luminari-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Luminari-Regular.ttf"; path = "../../../../../../Downloads/Luminari-Regular.ttf"; sourceTree = "<group>"; };
 		F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreView.swift; sourceTree = "<group>"; };
@@ -76,6 +89,7 @@
 		F3C0246123D70B89007DA3F9 /* ExtensionUIChessPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIChessPiece.swift; sourceTree = "<group>"; };
 		F3C0246323D70B97007DA3F9 /* BoardIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardIndex.swift; sourceTree = "<group>"; };
 		F3C0246523D70BDF007DA3F9 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		F3EA041023FE966D0077E201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3FB8A5C23D1F8A900F0BF28 /* GameOfChess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfChess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FB8A5F23D1F8A900F0BF28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3FB8A6123D1F8A900F0BF28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7421C9B05708FA913FCDF131 /* Pods_GameOfChess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4FAC58EE0A5D33B6D5785D /* Pods_GameOfChessTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,12 +130,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4862E0B91CB3C6413FCA3624 /* Pods_GameOfChess_GameOfChessUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D3406248FDA9952E220C020 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD3809DEA9C946B99440B764 /* Pods-GameOfChess.debug.xcconfig */,
+				48F7D817D9B3BD20025DAB75 /* Pods-GameOfChess.release.xcconfig */,
+				1781044B5B34C997BC9ABEB1 /* Pods-GameOfChess-GameOfChessUITests.debug.xcconfig */,
+				0926E8BDFC42BBCF2098E8F1 /* Pods-GameOfChess-GameOfChessUITests.release.xcconfig */,
+				166C80CED7AB32EF9EF3D4DD /* Pods-GameOfChessTests.debug.xcconfig */,
+				6A46F5934D5B77B41E804CE3 /* Pods-GameOfChessTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA4D6F1F3D6C53CF8B3A6E98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58BAE88E19A51965C274B1DA /* Pods_GameOfChess.framework */,
+				A7FC56D56B2D77E75C67BF53 /* Pods_GameOfChess_GameOfChessUITests.framework */,
+				C0BC5FC5DE49F323A370F549 /* Pods_GameOfChessTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F32047E423F2CF3500277350 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +175,8 @@
 				F3FB8A7523D1F8AA00F0BF28 /* GameOfChessTests */,
 				F3FB8A8023D1F8AA00F0BF28 /* GameOfChessUITests */,
 				F3FB8A5D23D1F8A900F0BF28 /* Products */,
+				7D3406248FDA9952E220C020 /* Pods */,
+				DA4D6F1F3D6C53CF8B3A6E98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,13 +201,13 @@
 				F32047E423F2CF3500277350 /* Fonts */,
 				F3FB8A8F23D1FA1A00F0BF28 /* Input1View.swift */,
 				F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */,
+				F3FB8A6523D1F8A900F0BF28 /* Main.storyboard */,
 				F3FB8A6323D1F8A900F0BF28 /* ViewController.swift */,
 				F3BD21A223FE7EE4003FF9D9 /* Highscore.swift */,
 				F3BD21A423FE81E2003FF9D9 /* HighscoreCell.swift */,
 				F3BD21A523FE81E2003FF9D9 /* HighscoreCell.xib */,
 				F3FB8A9123D1FAB000F0BF28 /* Input2View.swift */,
 				F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */,
-				F3FB8A6523D1F8A900F0BF28 /* Main.storyboard */,
 				F3FB8A9323D1FD6800F0BF28 /* GameView.swift */,
 				F3C0244D23D70A8D007DA3F9 /* Piece.swift */,
 				F3C0244F23D70A9F007DA3F9 /* Pawn.swift */,
@@ -180,6 +222,7 @@
 				F3C0246123D70B89007DA3F9 /* ExtensionUIChessPiece.swift */,
 				F3C0246323D70B97007DA3F9 /* BoardIndex.swift */,
 				F3C0246523D70BDF007DA3F9 /* StartScreen.swift */,
+				F3EA041023FE966D0077E201 /* GoogleService-Info.plist */,
 			);
 			path = GameOfChess;
 			sourceTree = "<group>";
@@ -209,9 +252,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3FB8A8623D1F8AA00F0BF28 /* Build configuration list for PBXNativeTarget "GameOfChess" */;
 			buildPhases = (
+				B5AD68E928C7E5207D44043D /* [CP] Check Pods Manifest.lock */,
 				F3FB8A5823D1F8A900F0BF28 /* Sources */,
 				F3FB8A5923D1F8A900F0BF28 /* Frameworks */,
 				F3FB8A5A23D1F8A900F0BF28 /* Resources */,
+				A77DF4979795B7A89D283048 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +271,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3FB8A8923D1F8AA00F0BF28 /* Build configuration list for PBXNativeTarget "GameOfChessTests" */;
 			buildPhases = (
+				168E2D9818C705B7497BD075 /* [CP] Check Pods Manifest.lock */,
 				F3FB8A6E23D1F8AA00F0BF28 /* Sources */,
 				F3FB8A6F23D1F8AA00F0BF28 /* Frameworks */,
 				F3FB8A7023D1F8AA00F0BF28 /* Resources */,
@@ -244,9 +290,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3FB8A8C23D1F8AA00F0BF28 /* Build configuration list for PBXNativeTarget "GameOfChessUITests" */;
 			buildPhases = (
+				8FC89F3315EEA5EA630C6FCC /* [CP] Check Pods Manifest.lock */,
 				F3FB8A7923D1F8AA00F0BF28 /* Sources */,
 				F3FB8A7A23D1F8AA00F0BF28 /* Frameworks */,
 				F3FB8A7B23D1F8AA00F0BF28 /* Resources */,
+				8D1FB0ED78E254ABF350A2FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,6 +359,7 @@
 				F3FB8A6923D1F8AA00F0BF28 /* Assets.xcassets in Resources */,
 				F3FB8A6723D1F8A900F0BF28 /* Main.storyboard in Resources */,
 				F3BD21A723FE81E2003FF9D9 /* HighscoreCell.xib in Resources */,
+				F3EA041123FE966D0077E201 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +378,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		168E2D9818C705B7497BD075 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameOfChessTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D1FB0ED78E254ABF350A2FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GameOfChess-GameOfChessUITests/Pods-GameOfChess-GameOfChessUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GameOfChess-GameOfChessUITests/Pods-GameOfChess-GameOfChessUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GameOfChess-GameOfChessUITests/Pods-GameOfChess-GameOfChessUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FC89F3315EEA5EA630C6FCC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameOfChess-GameOfChessUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A77DF4979795B7A89D283048 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GameOfChess/Pods-GameOfChess-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GameOfChess/Pods-GameOfChess-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GameOfChess/Pods-GameOfChess-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5AD68E928C7E5207D44043D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GameOfChess-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F3FB8A5823D1F8A900F0BF28 /* Sources */ = {
@@ -528,6 +680,7 @@
 		};
 		F3FB8A8723D1F8AA00F0BF28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD3809DEA9C946B99440B764 /* Pods-GameOfChess.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +698,7 @@
 		};
 		F3FB8A8823D1F8AA00F0BF28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48F7D817D9B3BD20025DAB75 /* Pods-GameOfChess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -562,6 +716,7 @@
 		};
 		F3FB8A8A23D1F8AA00F0BF28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 166C80CED7AB32EF9EF3D4DD /* Pods-GameOfChessTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -583,6 +738,7 @@
 		};
 		F3FB8A8B23D1F8AA00F0BF28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A46F5934D5B77B41E804CE3 /* Pods-GameOfChessTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -604,6 +760,7 @@
 		};
 		F3FB8A8D23D1F8AA00F0BF28 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1781044B5B34C997BC9ABEB1 /* Pods-GameOfChess-GameOfChessUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -623,6 +780,7 @@
 		};
 		F3FB8A8E23D1F8AA00F0BF28 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0926E8BDFC42BBCF2098E8F1 /* Pods-GameOfChess-GameOfChessUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

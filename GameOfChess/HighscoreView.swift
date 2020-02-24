@@ -7,17 +7,42 @@
 //
 
 import UIKit
+import Firebase
 
 class HighscoreView: UIViewController, UITableViewDataSource {
+    
+    var db : Firestore!
     
     let cellId = "highscoreCellId"
     
     @IBOutlet weak var highscoreTableView: UITableView!
     
+    var highscores = [Highscore]()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //readFromDB()
+        
+        db = Firestore.firestore()
+        
+        let itemRef = db.collection("highscores")
+        
+        itemRef.addSnapshotListener() {
+            (snapshot , error) in
+            guard let documents = snapshot?.documents else {return}
+            
+            for document in documents {
+                let highscore = Highscore(snapshot: document)
+                
+                self.highscores.append(highscore)
+                
+                //print(item.name)
+            }
+            self.highscoreTableView.reloadData()
+        }
 
         view.setGradientBackground(firstColor: #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1), secondColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         
@@ -31,15 +56,19 @@ class HighscoreView: UIViewController, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        highscores.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! HighscoreCell
         
-        cell.movesLabel.text = "2"
-        cell.nameLabel.text = "Tobias"
-        cell.numberLabel.text = "1"
+//        for highscore in highscores{
+//
+//        }
+        
+        cell.movesLabel.text = String(highscores[indexPath.row].numberOfMoves)
+        cell.nameLabel.text = highscores[indexPath.row].playerName
+        cell.numberLabel.text = String(indexPath.row + 1)
         cell.backgroundColor = UIColor.clear
         
         return cell
@@ -48,5 +77,30 @@ class HighscoreView: UIViewController, UITableViewDataSource {
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+
+    
+//    func readFromDB(){
+//        db = Firestore.firestore()
+//
+//        let itemRef = db.collection("highscores")
+//
+//        itemRef.getDocuments() {
+//            (snapshot , error) in
+//            guard let documents = snapshot?.documents else {return}
+//
+//            for document in documents {
+//                let highscore = Highscore(snapshot: document)
+//
+//                self.highscores.append(highscore)
+//
+//                //print(item.name)
+//            }
+//            
+//
+//
+//        }
+//
+//
+//    }
     
 }
