@@ -166,7 +166,7 @@ class GameView: UIViewController {
             return
         }
         
-        displayCheckLabel.text = playerChecked + " is in check"
+        displayCheckLabel.text = playerChecked + " are in Check!"
     }
     
     func displayWinner(){
