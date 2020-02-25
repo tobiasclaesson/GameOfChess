@@ -168,6 +168,33 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F36DCFFB240554690087AED1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F3FB8A6323D1F8A900F0BF28 /* ViewController.swift */,
+				F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */,
+				F3FB8A8F23D1FA1A00F0BF28 /* Input1View.swift */,
+				F3FB8A9123D1FAB000F0BF28 /* Input2View.swift */,
+				F3FB8A9323D1FD6800F0BF28 /* GameView.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F36DCFFC240554CE0087AED1 /* Pieces */ = {
+			isa = PBXGroup;
+			children = (
+				F3C0244D23D70A8D007DA3F9 /* Piece.swift */,
+				F3C0245B23D70B32007DA3F9 /* Ghost.swift */,
+				F3C0244F23D70A9F007DA3F9 /* Pawn.swift */,
+				F3C0245323D70ABC007DA3F9 /* Rook.swift */,
+				F3C0245123D70AAF007DA3F9 /* Knight.swift */,
+				F3C0245523D70AC8007DA3F9 /* Bishop.swift */,
+				F3C0245723D70AE3007DA3F9 /* King.swift */,
+				F3C0245923D70AEC007DA3F9 /* Queen.swift */,
+			);
+			path = Pieces;
+			sourceTree = "<group>";
+		};
 		F3FB8A5323D1F8A900F0BF28 = {
 			isa = PBXGroup;
 			children = (
@@ -195,34 +222,23 @@
 			children = (
 				F3FB8A5F23D1F8A900F0BF28 /* AppDelegate.swift */,
 				F3FB8A6123D1F8A900F0BF28 /* SceneDelegate.swift */,
+				F3C0246523D70BDF007DA3F9 /* StartScreen.swift */,
 				F3FB8A6823D1F8AA00F0BF28 /* Assets.xcassets */,
-				F3FB8A6A23D1F8AA00F0BF28 /* LaunchScreen.storyboard */,
 				F3FB8A6D23D1F8AA00F0BF28 /* Info.plist */,
-				F32047E423F2CF3500277350 /* Fonts */,
-				F3FB8A8F23D1FA1A00F0BF28 /* Input1View.swift */,
-				F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */,
+				F3EA041023FE966D0077E201 /* GoogleService-Info.plist */,
+				F3FB8A6A23D1F8AA00F0BF28 /* LaunchScreen.storyboard */,
 				F3FB8A6523D1F8A900F0BF28 /* Main.storyboard */,
-				F3FB8A6323D1F8A900F0BF28 /* ViewController.swift */,
-				F3BD21A223FE7EE4003FF9D9 /* Highscore.swift */,
-				F3BD21A423FE81E2003FF9D9 /* HighscoreCell.swift */,
-				F3BD21A523FE81E2003FF9D9 /* HighscoreCell.xib */,
-				F3FB8A9123D1FAB000F0BF28 /* Input2View.swift */,
-				F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */,
-				F3FB8A9323D1FD6800F0BF28 /* GameView.swift */,
-				F3C0244D23D70A8D007DA3F9 /* Piece.swift */,
-				F3C0244F23D70A9F007DA3F9 /* Pawn.swift */,
-				F3C0245123D70AAF007DA3F9 /* Knight.swift */,
-				F3C0245323D70ABC007DA3F9 /* Rook.swift */,
-				F3C0245523D70AC8007DA3F9 /* Bishop.swift */,
-				F3C0245723D70AE3007DA3F9 /* King.swift */,
-				F3C0245923D70AEC007DA3F9 /* Queen.swift */,
-				F3C0245B23D70B32007DA3F9 /* Ghost.swift */,
+				F32047E423F2CF3500277350 /* Fonts */,
+				F36DCFFB240554690087AED1 /* ViewControllers */,
+				F36DCFFC240554CE0087AED1 /* Pieces */,
 				F3C0245D23D70B50007DA3F9 /* ChessGame.swift */,
 				F3C0245F23D70B65007DA3F9 /* ChessBoard.swift */,
-				F3C0246123D70B89007DA3F9 /* ExtensionUIChessPiece.swift */,
 				F3C0246323D70B97007DA3F9 /* BoardIndex.swift */,
-				F3C0246523D70BDF007DA3F9 /* StartScreen.swift */,
-				F3EA041023FE966D0077E201 /* GoogleService-Info.plist */,
+				F3BD21A223FE7EE4003FF9D9 /* Highscore.swift */,
+				F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */,
+				F3C0246123D70B89007DA3F9 /* ExtensionUIChessPiece.swift */,
+				F3BD21A423FE81E2003FF9D9 /* HighscoreCell.swift */,
+				F3BD21A523FE81E2003FF9D9 /* HighscoreCell.xib */,
 			);
 			path = GameOfChess;
 			sourceTree = "<group>";

@@ -13,6 +13,8 @@ class Input1View: UIViewController {
     
     let segueToInput2View = "segueToInput2View"
     
+    var whitePlayerName = ""
+    
     @IBOutlet weak var textField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +28,32 @@ class Input1View: UIViewController {
     
     
     @IBAction func confirmButtonClick(_ sender: Any) {
+        
+        guard let name = textField.text else {return}
+        
+        if textField.text == ""{
+            whitePlayerName = "Anonymous"
+        }
+        else{
+            whitePlayerName = name
+        }
+        
+        
         performSegue(withIdentifier: segueToInput2View, sender: self)
     }
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == segueToInput2View{
+            guard let destVC = segue.destination as? Input2View else {return}
+            
+            destVC.whitePlayerName = self.whitePlayerName
+        }
     }
     
     

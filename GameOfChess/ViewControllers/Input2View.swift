@@ -13,6 +13,11 @@ class Input2View: UIViewController {
     
     let segueToGameView = "segueToGameView"
     
+    @IBOutlet weak var textField: UITextField!
+    
+    var whitePlayerName = ""
+    var blackPlayerName = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +26,16 @@ class Input2View: UIViewController {
         
     }
     @IBAction func confirmButtonClick(_ sender: Any) {
+        
+       guard let name = textField.text else {return}
+        
+        if textField.text == ""{
+            blackPlayerName = "Anonymous"
+        }
+        else{
+            blackPlayerName = name
+        }
+        
         performSegue(withIdentifier: segueToGameView, sender: self)
         
     }
@@ -29,4 +44,13 @@ class Input2View: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == segueToGameView{
+            guard let destVC = segue.destination as? GameView else {return}
+            
+            destVC.whitePlayerName = self.whitePlayerName
+            destVC.blackPlayerName = self.blackPlayerName
+        }
+    }
 }

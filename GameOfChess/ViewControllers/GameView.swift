@@ -12,6 +12,8 @@ import Firebase
 
 class GameView: UIViewController {
     
+    @IBOutlet weak var tileView: UIView!
+    @IBOutlet var wholeView: UIView!
     var db : Firestore!
     
     let segToMain = "unwindToMainMenu"
@@ -25,14 +27,15 @@ class GameView: UIViewController {
     var sourceOrigin: CGPoint!
     //Dest coordinates of topleft point
     var destinationOrigin: CGPoint!
+    
     //Space between edge and chess board
-    static var SPACE_FROM_LEFT_EDGE = 23
+    static var SPACE_FROM_LEFT_EDGE : Int = Int((UIScreen.main.bounds.width - (46 * 8)) * 0.5)
     //Space between top and chess board
-    static var SPACE_FROM_TOP_EDGE = 264
+    static var SPACE_FROM_TOP_EDGE: Int = Int((UIScreen.main.bounds.height - (46 * 8)) * 0.5)
     static var TILE_SIZE = 46
     
-    var playerOneName = "TestPlayer1"
-    var playerTwoName = "TestPlayer2"
+    var whitePlayerName = ""
+    var blackPlayerName = ""
     var players = [String]()
     var currentPlayer = ""
     var moves = 0
@@ -47,8 +50,8 @@ class GameView: UIViewController {
         
         chessPieces = []
         myChessGame = ChessGame.init(viewController: self)
-        players = [playerOneName, playerTwoName]
-        currentPlayer = playerOneName
+        players = [whitePlayerName, blackPlayerName]
+        currentPlayer = whitePlayerName
         
     }
     //Touch on screen has began
@@ -102,7 +105,9 @@ class GameView: UIViewController {
             // If move is valid: set frame origin to destination, else set it back to source origin
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex){
                 myChessGame.move(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destIndex, toOrigin: destinationOrigin)
+                print(currentPlayer + " moved")
                 
+                //Increase moves variable every time white moves
                 if pieceDragged.color != #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1){
                     moves += 1
                 }
@@ -113,7 +118,9 @@ class GameView: UIViewController {
                     return
                 }
                 
+                //Check if there is a pawn on the last or first row
                 if shouldPromotePawn(){
+                    //Promote pawn
                     promptForPawnPromotion()
                 }
                 else{
@@ -133,6 +140,7 @@ class GameView: UIViewController {
         //display check if there are any
         displayCheck()
         
+        //Change current player
         for player in players{
             if player != currentPlayer{
                 currentPlayer = player
