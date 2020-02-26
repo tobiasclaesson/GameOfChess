@@ -28,6 +28,9 @@ class HighscoreView: UIViewController, UITableViewDataSource {
         
         db = Firestore.firestore()
         
+        highscoreTableView.rowHeight = UITableView.automaticDimension
+        highscoreTableView.estimatedRowHeight = 70
+        
         let itemRef = db.collection("highscores")
         
         itemRef.addSnapshotListener() {
