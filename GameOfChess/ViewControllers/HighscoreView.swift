@@ -18,7 +18,7 @@ class HighscoreView: UIViewController, UITableViewDataSource {
     @IBOutlet weak var highscoreTableView: UITableView!
     
     var highscores = [Highscore]()
-    
+    var sortedHighscores = [Highscore]()
     
     
     override func viewDidLoad() {
@@ -44,6 +44,8 @@ class HighscoreView: UIViewController, UITableViewDataSource {
                 
                 //print(item.name)
             }
+            self.sortedHighscores = self.highscores.sorted()
+            
             self.highscoreTableView.reloadData()
         }
 
@@ -69,8 +71,8 @@ class HighscoreView: UIViewController, UITableViewDataSource {
 //
 //        }
         
-        cell.movesLabel.text = String(highscores[indexPath.row].numberOfMoves)
-        cell.nameLabel.text = highscores[indexPath.row].playerName
+        cell.movesLabel.text = String(sortedHighscores[indexPath.row].numberOfMoves)
+        cell.nameLabel.text = sortedHighscores[indexPath.row].playerName
         cell.numberLabel.text = String(indexPath.row + 1)
         cell.backgroundColor = UIColor.clear
         

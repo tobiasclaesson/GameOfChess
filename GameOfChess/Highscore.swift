@@ -9,7 +9,9 @@
 import Foundation
 import Firebase
 
-struct Highscore{
+struct Highscore : Comparable{
+    
+    
     var playerName: String
     var numberOfMoves: Int
     
@@ -28,6 +30,13 @@ struct Highscore{
     func toDict() -> [String : Any] {
         return ["playerName" : playerName,
                 "moves" : numberOfMoves]
+    }
+    
+    static func < (lhs: Highscore, rhs: Highscore) -> Bool {
+        if lhs.numberOfMoves < rhs.numberOfMoves{
+            return true
+        }
+        return false
     }
     
 }

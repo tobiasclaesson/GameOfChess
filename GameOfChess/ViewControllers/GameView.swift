@@ -22,7 +22,7 @@ class GameView: UIViewController {
     @IBOutlet weak var displayCheckLabel: UILabel!
     
     @IBOutlet var panOUTLET: UIPanGestureRecognizer!
-    var pieceDragged2: UIChessPiece!
+    
     var pieceDragged: UIChessPiece!
     //Source coordinates of topleft point
     var sourceOrigin: CGPoint!
@@ -60,7 +60,6 @@ class GameView: UIViewController {
         
         // If type cast to UIChessPiece fail, pieceDragged will be nil
         pieceDragged = touches.first!.view as? UIChessPiece
-        pieceDragged2 = pieceDragged
         
         if pieceDragged != nil{
             //Origin == top left point of a rect
