@@ -38,7 +38,7 @@ class Bishop: UIChessPiece {
         
     }
     
-    func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+    func tryToMove(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         //abs makes every value positive
         //Check if difference absolute value of rows == difference in abosulute value in cols == Piece have moved diagonally
         if abs(dest.row - source.row) == abs(dest.col - source.col){

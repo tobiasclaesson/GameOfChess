@@ -142,7 +142,7 @@ class ChessGame: NSObject {
             return isMoveValid(forRookOrBishopOrQueen: piece, fromIndex: source, toIndex: dest)
         case is Knight:
             if let knight = piece as? Knight{
-                if !knight.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                if !knight.tryToMove(fromIndex: source, toIndex: dest){
                     return false
                 }
             }
@@ -159,7 +159,7 @@ class ChessGame: NSObject {
     
     func isMoveValid(forPawn pawn: Pawn, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         
-        if !pawn.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+        if !pawn.tryToMove(fromIndex: source, toIndex: dest){
             return false
         }
         //Not attacking
@@ -167,9 +167,9 @@ class ChessGame: NSObject {
             
             //Advance by 2
             if pawn.triesToAdvanceBy2{
+                
+                //move direction
                 var moveForward = 0
-                
-                
                 if pawn.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1){
                     moveForward = 1
                 }
@@ -204,19 +204,19 @@ class ChessGame: NSObject {
         switch piece{
         case is Rook:
             if let rook = piece as? Rook{
-                if !rook.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                if !rook.tryToMove(fromIndex: source, toIndex: dest){
                     return false
                 }
             }
         case is Bishop:
             if let bishop = piece as? Bishop{
-                if !bishop.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                if !bishop.tryToMove(fromIndex: source, toIndex: dest){
                     return false
                 }
             }
         default:
             if let queen = piece as? Queen{
-                if !queen.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                if !queen.tryToMove(fromIndex: source, toIndex: dest){
                     return false
                 }
             }
@@ -253,7 +253,7 @@ class ChessGame: NSObject {
     
     func isMoveValid(forKing king: King, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         
-        if !king.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+        if !king.tryToMove(fromIndex: source, toIndex: dest){
             return false
         }
         

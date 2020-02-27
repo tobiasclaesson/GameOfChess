@@ -37,7 +37,7 @@ class King: UIChessPiece {
         
     }
     
-    func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+    func tryToMove(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         
         let diffInRows = abs(dest.row - source.row)
         let diffInCols = abs(dest.col - source.col)

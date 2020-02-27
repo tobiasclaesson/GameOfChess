@@ -37,7 +37,7 @@ class Queen: UIChessPiece {
         
     }
     
-    func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+    func tryToMove(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         //Rook movement
         if source.row == dest.row || source.col == dest.col{
             return true

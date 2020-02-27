@@ -90,15 +90,18 @@ class GameView: UIViewController {
             x -= GameView.SPACE_FROM_LEFT_EDGE
             y -= GameView.SPACE_FROM_TOP_EDGE
             
-            //Round up
+            
+            //Round down to closest tile origin
             x = (x / GameView.TILE_SIZE) * GameView.TILE_SIZE
             y = (y / GameView.TILE_SIZE) * GameView.TILE_SIZE
+            
             
             // Add constants
             x += GameView.SPACE_FROM_LEFT_EDGE
             y += GameView.SPACE_FROM_TOP_EDGE
             
             destinationOrigin = CGPoint(x: x, y: y)
+            
             
             let sourceIndex = Chessboard.indexOf(origin: sourceOrigin)
             let destIndex = Chessboard.indexOf(origin: destinationOrigin)
@@ -125,6 +128,7 @@ class GameView: UIViewController {
                 if shouldPromotePawn(){
                     //Promote pawn
                     promptForPawnPromotion()
+                    resumeGame(piece: pieceDragged)
                 }
                 else{
                     
@@ -155,11 +159,59 @@ class GameView: UIViewController {
         updateTurnLabel()
     }
     
-    func promote(pawn pawnToBePromoted: Pawn, into option: String){
+    func promote(pawn pawnPromoted: Pawn, into optionPiece: String){
+        let pawnColor = pawnPromoted.color
+        let pawnFrame = pawnPromoted.frame
+        
+        //Get index of the pawn that will be promoted
+        let pawnIndex = Chessboard.indexOf(origin: pawnFrame.origin)
+        
+        myChessGame.chessBoard.remove(piece: pawnPromoted)
+        
+        //Create a new piece depending on what the player choose at the pawns old location
+        switch optionPiece {
+        case "Queen":
+            myChessGame.chessBoard.board[pawnIndex.row][pawnIndex.col] = Queen(frame: pawnFrame, color: pawnColor, vc: self)
+        case "Knight":
+            myChessGame.chessBoard.board[pawnIndex.row][pawnIndex.col] = Knight(frame: pawnFrame, color: pawnColor, vc: self)
+        case "Bishop":
+            myChessGame.chessBoard.board[pawnIndex.row][pawnIndex.col] = Bishop(frame: pawnFrame, color: pawnColor, vc: self)
+        case "Rook":
+            myChessGame.chessBoard.board[pawnIndex.row][pawnIndex.col] = Rook(frame: pawnFrame, color: pawnColor, vc: self)
+        default:
+            break
+        }
+            
         
     }
     
     func promptForPawnPromotion(){
+        if let pawn = myChessGame.getPawnToBePromoted(){
+            
+            let alertBox = UIAlertController(title: "Pawn promoted!", message: "Choose new piece", preferredStyle: UIAlertController.Style.alert)
+            
+            alertBox.addAction(UIAlertAction(title: "Queen", style: .default, handler: {
+                action in
+                self.promote(pawn: pawn, into: "Queen")
+            }))
+            alertBox.addAction(UIAlertAction(title: "Knight", style: .default, handler: {
+                action in
+                self.promote(pawn: pawn, into: "Knight")
+            }))
+            alertBox.addAction(UIAlertAction(title: "Bishop", style: .default, handler: {
+                action in
+                self.promote(pawn: pawn, into: "Bishop")
+            }))
+            alertBox.addAction(UIAlertAction(title: "Bishop", style: .default, handler: {
+                action in
+                self.promote(pawn: pawn, into: "Bishop")
+            }))
+            
+            
+            self.present(alertBox, animated: true, completion: nil)
+        }
+        
+        
         
     }
     

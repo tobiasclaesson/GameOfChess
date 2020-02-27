@@ -37,7 +37,7 @@ class Knight: UIChessPiece {
         
     }
     
-    func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+    func tryToMove(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         //Array with all valid moves
         let validMoves = [(source.row - 1, source.col + 2),
                           (source.row - 2, source.col + 1),

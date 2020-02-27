@@ -19,7 +19,7 @@ struct BoardIndex: Equatable {
     }
     
     //Compare to see if BoardIndexes are equal
-    static func ==(leftHandSide: BoardIndex, rightHandSide: BoardIndex) -> Bool{
-        return (leftHandSide.row == rightHandSide.row && leftHandSide.col == rightHandSide.col)
+    static func ==(lhs: BoardIndex, rhs: BoardIndex) -> Bool{
+        return (lhs.row == rhs.row && lhs.col == rhs.col)
     }
 }
