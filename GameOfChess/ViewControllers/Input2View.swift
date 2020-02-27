@@ -85,6 +85,7 @@ class Input2View: UIViewController {
         }
         
        UIView.animate(withDuration: 1, animations: {
+        self.textFieldUnderlineWidthConstrain.constant = 0
             self.labelUnderlineView.frame.size.width = 0
             self.textFieldLabel.alpha = 0
         })

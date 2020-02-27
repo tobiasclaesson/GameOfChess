@@ -299,7 +299,7 @@
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                 <connections>
                                     <action selector="textFieldEditBegan:" destination="pbU-uL-Uc9" eventType="editingDidBegin" id="HGn-5J-0Lj"/>
                                     <action selector="textFieldEditEnded:" destination="pbU-uL-Uc9" eventType="editingDidEnd" id="V0r-BQ-Hw0"/>
@@ -375,7 +375,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                 <connections>
                                     <action selector="textFieldEditBegan:" destination="ufm-7u-q8M" eventType="editingDidBegin" id="cwF-ra-XJ2"/>
                                     <action selector="textFieldEditEnded:" destination="ufm-7u-q8M" eventType="editingDidEnd" id="77g-Z6-bTT"/>
@@ -520,7 +520,7 @@
                                 <rect key="frame" x="23" y="264" width="368" height="368"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3NT-ON-WZw">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>

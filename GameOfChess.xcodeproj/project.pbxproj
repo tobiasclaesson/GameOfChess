@@ -700,6 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KYYW5AVT5B;
 				INFOPLIST_FILE = GameOfChess/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -718,6 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KYYW5AVT5B;
 				INFOPLIST_FILE = GameOfChess/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

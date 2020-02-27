@@ -134,6 +134,7 @@ class GameView: UIViewController {
                 pieceDragged.frame.origin = sourceOrigin
             }
         }
+        
     }
     
     func resumeGame(piece: UIChessPiece){
