@@ -302,7 +302,6 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                 <connections>
                                     <action selector="textFieldEditBegan:" destination="pbU-uL-Uc9" eventType="editingDidBegin" id="HGn-5J-0Lj"/>
-                                    <action selector="textFieldEditEnded:" destination="pbU-uL-Uc9" eventType="editingDidEnd" id="V0r-BQ-Hw0"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write here:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcQ-dD-R42">
@@ -325,9 +324,9 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="PE5-ww-I5C" firstAttribute="leading" secondItem="bz7-W8-TjW" secondAttribute="leading" constant="19" id="97c-rB-izH"/>
-                            <constraint firstItem="tcQ-dD-R42" firstAttribute="leading" secondItem="bz7-W8-TjW" secondAttribute="leading" constant="71" id="CTx-Bh-7KM"/>
                             <constraint firstItem="R19-1Z-LDs" firstAttribute="top" secondItem="BSx-50-urV" secondAttribute="bottom" constant="90" id="EP4-HV-304"/>
                             <constraint firstItem="I54-xq-YUG" firstAttribute="centerX" secondItem="jzC-Ol-Frt" secondAttribute="centerX" constant="-100" id="Gkm-hq-MZD"/>
                             <constraint firstItem="BSx-50-urV" firstAttribute="top" secondItem="I54-xq-YUG" secondAttribute="bottom" id="I4M-Fe-J2B"/>
@@ -339,14 +338,19 @@
                             <constraint firstItem="NQy-LK-NHl" firstAttribute="top" secondItem="PE5-ww-I5C" secondAttribute="bottom" constant="151" id="Wez-wr-wfM"/>
                             <constraint firstItem="BSx-50-urV" firstAttribute="centerX" secondItem="jzC-Ol-Frt" secondAttribute="centerX" id="dQb-pC-Jfb"/>
                             <constraint firstItem="tcQ-dD-R42" firstAttribute="top" secondItem="NQy-LK-NHl" secondAttribute="bottom" constant="61" id="eHr-jw-0iX"/>
+                            <constraint firstItem="tcQ-dD-R42" firstAttribute="centerX" secondItem="jzC-Ol-Frt" secondAttribute="centerX" constant="-97" id="iWS-Vi-FYW"/>
                             <constraint firstItem="R19-1Z-LDs" firstAttribute="centerX" secondItem="jzC-Ol-Frt" secondAttribute="centerX" id="tJW-Ub-qyp"/>
                             <constraint firstItem="PE5-ww-I5C" firstAttribute="top" secondItem="bz7-W8-TjW" secondAttribute="top" constant="2" id="upZ-FD-jBa"/>
                             <constraint firstItem="u8x-O2-uf5" firstAttribute="top" secondItem="bz7-W8-TjW" secondAttribute="top" id="w43-pL-MB2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bz7-W8-TjW"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Xdx-qA-Qhb" appends="YES" id="bxk-2T-y2N"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="labelUnderlineView" destination="I54-xq-YUG" id="740-MD-7Dx"/>
+                        <outlet property="tapRecognizer" destination="Xdx-qA-Qhb" id="iME-8o-MCG"/>
                         <outlet property="textField" destination="BSx-50-urV" id="jdc-mZ-Y3Z"/>
                         <outlet property="textFieldLabel" destination="tcQ-dD-R42" id="65l-s1-IQS"/>
                         <outlet property="textFieldUnderlineWidthConstrain" destination="NYk-iI-qCc" id="22k-I6-CUQ"/>
@@ -355,6 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UvA-c1-zIO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="pHy-OS-Ip5" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="Xdx-qA-Qhb"/>
             </objects>
             <point key="canvasLocation" x="895.6521739130435" y="137.94642857142856"/>
         </scene>
@@ -378,7 +383,6 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done"/>
                                 <connections>
                                     <action selector="textFieldEditBegan:" destination="ufm-7u-q8M" eventType="editingDidBegin" id="cwF-ra-XJ2"/>
-                                    <action selector="textFieldEditEnded:" destination="ufm-7u-q8M" eventType="editingDidEnd" id="77g-Z6-bTT"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TS-Yw-huf">
@@ -462,6 +466,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="jc2-dM-FKS" firstAttribute="top" secondItem="clS-9h-7cw" secondAttribute="top" id="4Rh-3F-lbk"/>
                             <constraint firstItem="6TS-Yw-huf" firstAttribute="centerX" secondItem="Ni1-dc-0VV" secondAttribute="centerX" id="71C-w0-SNf"/>
@@ -481,9 +486,13 @@
                             <constraint firstItem="6TS-Yw-huf" firstAttribute="top" secondItem="suz-fZ-aJl" secondAttribute="bottom" constant="90" id="zel-tV-kSE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="clS-9h-7cw"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xXb-2C-ZUK" appends="YES" id="f4W-bv-TaT"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="labelUnderlineView" destination="abo-jT-blJ" id="svA-vu-ICK"/>
+                        <outlet property="tapRecognizer" destination="xXb-2C-ZUK" id="FDe-BG-dia"/>
                         <outlet property="textField" destination="suz-fZ-aJl" id="TwD-ti-Iws"/>
                         <outlet property="textFieldLabel" destination="dQw-qn-Ykf" id="yk4-wa-JCB"/>
                         <outlet property="textFieldUnderlineWidthConstrain" destination="rMX-nV-pKC" id="KRv-LF-NN4"/>
@@ -491,6 +500,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRJ-dY-0eD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xXb-2C-ZUK"/>
             </objects>
             <point key="canvasLocation" x="1642.0289855072465" y="137.94642857142856"/>
         </scene>

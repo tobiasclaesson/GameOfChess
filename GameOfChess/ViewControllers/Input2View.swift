@@ -13,6 +13,7 @@ class Input2View: UIViewController {
     
     let segueToGameView = "segueToGameView"
     
+    @IBOutlet var tapRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textFieldLabel: UILabel!
     @IBOutlet weak var labelUnderlineView: UIView!
@@ -24,12 +25,28 @@ class Input2View: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textFieldLabel.alpha = 0
-        self.textFieldUnderlineWidthConstrain.constant = 0
-        labelUnderlineView.frame.size.width = 0
+        dismissKeyboard()
+        
         styleTextField(textFieldToStyle: textField)
         view.setGradientBackground(firstColor: #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1), secondColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        textFieldLabel.alpha = 0
+        self.textFieldUnderlineWidthConstrain.constant = 0
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+         if textField.text == ""{
+           
+           textField.attributedPlaceholder = createAttributedString(text: "Write name here", textColor: #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.8))
+       }
+    }
+    
+    func dismissKeyboard(){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
     
     func styleTextField(textFieldToStyle textField: UITextField){
@@ -79,19 +96,6 @@ class Input2View: UIViewController {
                 
         })
     }
-    @IBAction func textFieldEditEnded(_ sender: Any) {
-        if textField.text == ""{
-            textField.attributedPlaceholder = createAttributedString(text: "Write name here", textColor: #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.8))
-        }
-        
-       UIView.animate(withDuration: 1, animations: {
-        self.textFieldUnderlineWidthConstrain.constant = 0
-            self.labelUnderlineView.frame.size.width = 0
-            self.textFieldLabel.alpha = 0
-        })
-    }
-    
-    
     
     @IBAction func confirmButtonClick(_ sender: Any) {
         

@@ -14,6 +14,7 @@ class Input1View: UIViewController {
     let segueToInput2View = "segueToInput2View"
     
     var whitePlayerName = ""
+    @IBOutlet var tapRecognizer: UITapGestureRecognizer!
     
     @IBOutlet weak var labelUnderlineView: UIView!
     @IBOutlet weak var textFieldLabel: UILabel!
@@ -24,15 +25,29 @@ class Input1View: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textFieldLabel.alpha = 0
-        textFieldUnderlineWidthConstrain.constant = 0
-        labelUnderlineView.frame.size.width = 0
+        dismissKeyboard()
+        
         styleTextField(textFieldToStyle: textField)
         view.setGradientBackground(firstColor: #colorLiteral(red: 0.2605174184, green: 0.2605243921, blue: 0.260520637, alpha: 1), secondColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
         
-        
-        
-        
+    }
+    
+    func dismissKeyboard(){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        textFieldLabel.alpha = 0
+        textFieldUnderlineWidthConstrain.constant = 0
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+         if textField.text == ""{
+           
+           textField.attributedPlaceholder = createAttributedString(text: "Write name here", textColor: #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.8))
+       }
     }
     
     func styleTextField(textFieldToStyle textField: UITextField){
@@ -78,22 +93,6 @@ class Input1View: UIViewController {
         
     }
     
-    
-    
-    
-    
-    @IBAction func textFieldEditEnded(_ sender: Any) {
-        if textField.text == ""{
-            
-            textField.attributedPlaceholder = createAttributedString(text: "Write name here", textColor: #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 0.8))
-        }
-        
-        UIView.animate(withDuration: 1, animations: {
-            self.labelUnderlineView.frame.size.width = 0
-            self.textFieldLabel.alpha = 0
-        })
-    }
-    
     func createAttributedString(text: String, textColor: UIColor, font: UIFont = UIFont(name: "Kefa", size: 16.0)!) -> NSMutableAttributedString{
         var myMutableStringTitle = NSMutableAttributedString()
         let string  = text // PlaceHolderText
@@ -113,7 +112,6 @@ class Input1View: UIViewController {
         else{
             whitePlayerName = name
         }
-        
         
         performSegue(withIdentifier: segueToInput2View, sender: self)
     }

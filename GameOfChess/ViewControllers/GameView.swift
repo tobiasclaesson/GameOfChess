@@ -228,15 +228,13 @@ class GameView: UIViewController {
     }
     
     func drag(piece: UIChessPiece, usingGestureRecognizer gestureRecognizer: UIPanGestureRecognizer){
-//        while true {
-            let translation = gestureRecognizer.translation(in: view)
-            
-            // set new center, old coordninate + pan length
-            piece.center = CGPoint(x: translation.x + piece.center.x, y: translation.y + piece.center.y)
-            
-            // makes sure that the peice stays on our finger when we drag it
-            gestureRecognizer.setTranslation(CGPoint.zero, in: view)
-//        }
+        let translation = gestureRecognizer.translation(in: view)
+        
+        // set new center, old coordninate + pan length
+        piece.center = CGPoint(x: translation.x + piece.center.x, y: translation.y + piece.center.y)
+        
+        // makes sure that the peice stays on our finger when we drag it
+        gestureRecognizer.setTranslation(CGPoint.zero, in: view)
         
     }
     
