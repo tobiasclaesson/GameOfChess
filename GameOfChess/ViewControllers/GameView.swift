@@ -22,6 +22,7 @@ class GameView: UIViewController {
     @IBOutlet weak var displayCheckLabel: UILabel!
     
     @IBOutlet var panOUTLET: UIPanGestureRecognizer!
+    var pieceDragged2: UIChessPiece!
     var pieceDragged: UIChessPiece!
     //Source coordinates of topleft point
     var sourceOrigin: CGPoint!
@@ -59,6 +60,7 @@ class GameView: UIViewController {
         
         // If type cast to UIChessPiece fail, pieceDragged will be nil
         pieceDragged = touches.first!.view as? UIChessPiece
+        pieceDragged2 = pieceDragged
         
         if pieceDragged != nil{
             //Origin == top left point of a rect
@@ -68,9 +70,11 @@ class GameView: UIViewController {
     
     //A piece is currently being dragged
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         if pieceDragged != nil{
             drag(piece: pieceDragged, usingGestureRecognizer: panOUTLET)
         }
+        
     }
     
     //Check if drag is valid
@@ -224,14 +228,16 @@ class GameView: UIViewController {
     }
     
     func drag(piece: UIChessPiece, usingGestureRecognizer gestureRecognizer: UIPanGestureRecognizer){
+//        while true {
+            let translation = gestureRecognizer.translation(in: view)
+            
+            // set new center, old coordninate + pan length
+            piece.center = CGPoint(x: translation.x + piece.center.x, y: translation.y + piece.center.y)
+            
+            // makes sure that the peice stays on our finger when we drag it
+            gestureRecognizer.setTranslation(CGPoint.zero, in: view)
+//        }
         
-        let translation = gestureRecognizer.translation(in: view)
-        
-        // set new center, old coordninate + pan length
-        piece.center = CGPoint(x: translation.x + piece.center.x, y: translation.y + piece.center.y)
-        
-        // makes sure that the peice stays on our finger when we drag it
-        gestureRecognizer.setTranslation(CGPoint.zero, in: view)
     }
     
     func addHighscoreToDB(){

@@ -291,7 +291,7 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write here..." textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-50-urV">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write here..." textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-50-urV">
                                 <rect key="frame" x="71" y="370" width="272" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="hc5-iM-8bo"/>
@@ -907,7 +907,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atY-Wj-Xel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ohw-wQ-7Ot" userLabel="Exit" sceneMemberID="exit"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="3Kq-gg-zlH"/>
+                <panGestureRecognizer minimumNumberOfTouches="2" id="3Kq-gg-zlH"/>
             </objects>
             <point key="canvasLocation" x="2405.7971014492755" y="137.94642857142856"/>
         </scene>
