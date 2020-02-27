@@ -14,8 +14,6 @@
 		F37B44C623F2C4E30088FE91 /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */; };
 		F3BD21A123FE7B3A003FF9D9 /* HighscoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */; };
 		F3BD21A323FE7EE4003FF9D9 /* Highscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BD21A223FE7EE4003FF9D9 /* Highscore.swift */; };
-		F3BD21A623FE81E2003FF9D9 /* HighscoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BD21A423FE81E2003FF9D9 /* HighscoreCell.swift */; };
-		F3BD21A723FE81E2003FF9D9 /* HighscoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3BD21A523FE81E2003FF9D9 /* HighscoreCell.xib */; };
 		F3C0244E23D70A8D007DA3F9 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0244D23D70A8D007DA3F9 /* Piece.swift */; };
 		F3C0245023D70A9F007DA3F9 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0244F23D70A9F007DA3F9 /* Pawn.swift */; };
 		F3C0245223D70AAF007DA3F9 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0245123D70AAF007DA3F9 /* Knight.swift */; };
@@ -30,6 +28,8 @@
 		F3C0246423D70B97007DA3F9 /* BoardIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0246323D70B97007DA3F9 /* BoardIndex.swift */; };
 		F3C0246623D70BDF007DA3F9 /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0246523D70BDF007DA3F9 /* StartScreen.swift */; };
 		F3EA041123FE966D0077E201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3EA041023FE966D0077E201 /* GoogleService-Info.plist */; };
+		F3F88CDE24084D07002A43C0 /* HighscoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F88CDC24084D07002A43C0 /* HighscoreCell.swift */; };
+		F3F88CDF24084D07002A43C0 /* HighscoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3F88CDD24084D07002A43C0 /* HighscoreCell.xib */; };
 		F3FB8A6023D1F8A900F0BF28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB8A5F23D1F8A900F0BF28 /* AppDelegate.swift */; };
 		F3FB8A6223D1F8A900F0BF28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB8A6123D1F8A900F0BF28 /* SceneDelegate.swift */; };
 		F3FB8A6423D1F8A900F0BF28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FB8A6323D1F8A900F0BF28 /* ViewController.swift */; };
@@ -74,8 +74,6 @@
 		F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
 		F3BD21A023FE7B3A003FF9D9 /* HighscoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreView.swift; sourceTree = "<group>"; };
 		F3BD21A223FE7EE4003FF9D9 /* Highscore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highscore.swift; sourceTree = "<group>"; };
-		F3BD21A423FE81E2003FF9D9 /* HighscoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreCell.swift; sourceTree = "<group>"; };
-		F3BD21A523FE81E2003FF9D9 /* HighscoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighscoreCell.xib; sourceTree = "<group>"; };
 		F3C0244D23D70A8D007DA3F9 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		F3C0244F23D70A9F007DA3F9 /* Pawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pawn.swift; sourceTree = "<group>"; };
 		F3C0245123D70AAF007DA3F9 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
@@ -90,6 +88,8 @@
 		F3C0246323D70B97007DA3F9 /* BoardIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardIndex.swift; sourceTree = "<group>"; };
 		F3C0246523D70BDF007DA3F9 /* StartScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
 		F3EA041023FE966D0077E201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F3F88CDC24084D07002A43C0 /* HighscoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighscoreCell.swift; sourceTree = "<group>"; };
+		F3F88CDD24084D07002A43C0 /* HighscoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighscoreCell.xib; sourceTree = "<group>"; };
 		F3FB8A5C23D1F8A900F0BF28 /* GameOfChess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfChess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FB8A5F23D1F8A900F0BF28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3FB8A6123D1F8A900F0BF28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -236,9 +236,9 @@
 				F3C0246323D70B97007DA3F9 /* BoardIndex.swift */,
 				F3BD21A223FE7EE4003FF9D9 /* Highscore.swift */,
 				F37B44C523F2C4E30088FE91 /* ExtensionUIView.swift */,
+				F3F88CDC24084D07002A43C0 /* HighscoreCell.swift */,
+				F3F88CDD24084D07002A43C0 /* HighscoreCell.xib */,
 				F3C0246123D70B89007DA3F9 /* ExtensionUIChessPiece.swift */,
-				F3BD21A423FE81E2003FF9D9 /* HighscoreCell.swift */,
-				F3BD21A523FE81E2003FF9D9 /* HighscoreCell.xib */,
 			);
 			path = GameOfChess;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 				F3FB8A6C23D1F8AA00F0BF28 /* LaunchScreen.storyboard in Resources */,
 				F3FB8A6923D1F8AA00F0BF28 /* Assets.xcassets in Resources */,
 				F3FB8A6723D1F8A900F0BF28 /* Main.storyboard in Resources */,
-				F3BD21A723FE81E2003FF9D9 /* HighscoreCell.xib in Resources */,
+				F3F88CDF24084D07002A43C0 /* HighscoreCell.xib in Resources */,
 				F3EA041123FE966D0077E201 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,7 +513,7 @@
 				F3C0245E23D70B50007DA3F9 /* ChessGame.swift in Sources */,
 				F3BD21A323FE7EE4003FF9D9 /* Highscore.swift in Sources */,
 				F3C0245623D70AC8007DA3F9 /* Bishop.swift in Sources */,
-				F3BD21A623FE81E2003FF9D9 /* HighscoreCell.swift in Sources */,
+				F3F88CDE24084D07002A43C0 /* HighscoreCell.swift in Sources */,
 				F3C0245023D70A9F007DA3F9 /* Pawn.swift in Sources */,
 				F3C0246023D70B65007DA3F9 /* ChessBoard.swift in Sources */,
 				F3C0245423D70ABC007DA3F9 /* Rook.swift in Sources */,

@@ -264,6 +264,7 @@ class ChessGame: NSObject {
         return true
     }
     
+    //Check that kings dont stand next to each other
     func isOpponentKing(nearKing movingKing: King, thatGoesTo destIndexOfMovingKing: BoardIndex) -> Bool {
         
         var opponentKing: King

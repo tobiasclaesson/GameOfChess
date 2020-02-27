@@ -30,7 +30,7 @@ class Pawn: UIChessPiece {
         self.isUserInteractionEnabled = true
         
         self.textAlignment = .center
-        self.font = self.font.withSize(38)
+        self.font = self.font.withSize(35)
         
         //add piece to array
         vc.chessPieces.append(self)

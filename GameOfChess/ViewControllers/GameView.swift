@@ -30,10 +30,10 @@ class GameView: UIViewController {
     var destinationOrigin: CGPoint!
     
     //Space between edge and chess board
-    static var SPACE_FROM_LEFT_EDGE : Int = Int((UIScreen.main.bounds.width - (46 * 8)) * 0.5)
+    static var SPACE_FROM_LEFT_EDGE : Int = Int((UIScreen.main.bounds.width - (40 * 8)) * 0.5)
     //Space between top and chess board
-    static var SPACE_FROM_TOP_EDGE: Int = Int((UIScreen.main.bounds.height - (46 * 8)) * 0.5)
-    static var TILE_SIZE = 46
+    static var SPACE_FROM_TOP_EDGE: Int = Int((UIScreen.main.bounds.height - (40 * 8)) * 0.5)
+    static var TILE_SIZE = 40
     
     var whitePlayerName = ""
     var blackPlayerName = ""
