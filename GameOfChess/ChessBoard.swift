@@ -9,7 +9,7 @@
 import UIKit
 
 class Chessboard: NSObject {
-    var board: [[Piece]]!
+    var board: [[Piece]]
     var vc: GameView!
     let ROWS = 8
     let COLS = 8

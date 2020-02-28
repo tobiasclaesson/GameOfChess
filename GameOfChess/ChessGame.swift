@@ -191,7 +191,7 @@ class ChessGame: NSObject {
         //Attacking
         else{
             
-            //Checks that destination contains anything but i Ghost piece
+            //Checks that destination contains anything but a Ghost piece
             if !(chessBoard.board[dest.row][dest.col] is Ghost){
                 return true
             }

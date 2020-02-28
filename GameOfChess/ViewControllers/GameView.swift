@@ -33,6 +33,7 @@ class GameView: UIViewController {
     static var SPACE_FROM_LEFT_EDGE : Int = Int((UIScreen.main.bounds.width - (40 * 8)) * 0.5)
     //Space between top and chess board
     static var SPACE_FROM_TOP_EDGE: Int = Int((UIScreen.main.bounds.height - (40 * 8)) * 0.5)
+    //Tile size
     static var TILE_SIZE = 40
     
     var whitePlayerName = ""
@@ -83,26 +84,13 @@ class GameView: UIViewController {
             let touchLocation = touches.first!.location(in: view)
             
             //Takes x and y coords from touchLocation
-            var x = Int(touchLocation.x)
-            var y = Int(touchLocation.y)
+            let x = Int(touchLocation.x)
+            let y = Int(touchLocation.y)
             
-            // Remove constants
-            x -= GameView.SPACE_FROM_LEFT_EDGE
-            y -= GameView.SPACE_FROM_TOP_EDGE
+            //Round down to closest chess tile
+            destinationOrigin = roundToClosestTile(fromX: x, fromY: y)
             
-            
-            //Round down to closest tile origin
-            x = (x / GameView.TILE_SIZE) * GameView.TILE_SIZE
-            y = (y / GameView.TILE_SIZE) * GameView.TILE_SIZE
-            
-            
-            // Add constants
-            x += GameView.SPACE_FROM_LEFT_EDGE
-            y += GameView.SPACE_FROM_TOP_EDGE
-            
-            destinationOrigin = CGPoint(x: x, y: y)
-            
-            
+            //Get Row and col for source and dest origin
             let sourceIndex = Chessboard.indexOf(origin: sourceOrigin)
             let destIndex = Chessboard.indexOf(origin: destinationOrigin)
             
@@ -202,9 +190,9 @@ class GameView: UIViewController {
                 action in
                 self.promote(pawn: pawn, into: "Bishop")
             }))
-            alertBox.addAction(UIAlertAction(title: "Bishop", style: .default, handler: {
+            alertBox.addAction(UIAlertAction(title: "Rook", style: .default, handler: {
                 action in
-                self.promote(pawn: pawn, into: "Bishop")
+                self.promote(pawn: pawn, into: "Rook")
             }))
             
             
@@ -222,6 +210,30 @@ class GameView: UIViewController {
         else {
             return false
         }
+    }
+    
+    func roundToClosestTile(fromX x: Int, fromY y: Int) -> CGPoint{
+        
+        var xx = x
+        
+        var yy = y
+        
+        // Remove constants
+        xx -= GameView.SPACE_FROM_LEFT_EDGE
+        yy -= GameView.SPACE_FROM_TOP_EDGE
+        
+        
+        //Round down to closest tile origin
+        xx = (x / GameView.TILE_SIZE) * GameView.TILE_SIZE
+        yy = (y / GameView.TILE_SIZE) * GameView.TILE_SIZE
+        
+        
+        // Add constants
+        xx += GameView.SPACE_FROM_LEFT_EDGE
+        yy += GameView.SPACE_FROM_TOP_EDGE
+        
+        
+        return CGPoint(x: xx, y: yy)
     }
     
     func displayCheck(){
