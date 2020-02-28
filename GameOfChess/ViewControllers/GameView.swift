@@ -238,7 +238,7 @@ class GameView: UIViewController {
             
             addHighscoreToDB()
             
-            let winnerBox = UIAlertController(title: "Game Over", message: "\(winner) won", preferredStyle: .alert)
+            let winnerBox = UIAlertController(title: "Game Over", message: "\(currentPlayer)/ \(winner) player won in \(moves) moves!", preferredStyle: .alert)
             
             winnerBox.addAction(UIAlertAction(title: "Back to main menu", style: .default, handler: {
                 action in
