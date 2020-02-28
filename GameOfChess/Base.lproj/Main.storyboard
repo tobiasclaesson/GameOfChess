@@ -350,10 +350,12 @@
                     </view>
                     <connections>
                         <outlet property="labelUnderlineView" destination="I54-xq-YUG" id="740-MD-7Dx"/>
+                        <outlet property="playerWhiteLabelConstraint" destination="Uze-JI-e00" id="DPw-TS-ejf"/>
                         <outlet property="tapRecognizer" destination="Xdx-qA-Qhb" id="iME-8o-MCG"/>
                         <outlet property="textField" destination="BSx-50-urV" id="jdc-mZ-Y3Z"/>
                         <outlet property="textFieldLabel" destination="tcQ-dD-R42" id="65l-s1-IQS"/>
                         <outlet property="textFieldUnderlineWidthConstrain" destination="NYk-iI-qCc" id="22k-I6-CUQ"/>
+                        <outlet property="writeNameLabelConstraint" destination="Wez-wr-wfM" id="AWK-X1-1PS"/>
                         <segue destination="ufm-7u-q8M" kind="presentation" identifier="segueToInput2View" modalPresentationStyle="fullScreen" id="bgg-YW-j2S"/>
                     </connections>
                 </viewController>
@@ -492,10 +494,12 @@
                     </view>
                     <connections>
                         <outlet property="labelUnderlineView" destination="abo-jT-blJ" id="svA-vu-ICK"/>
+                        <outlet property="playerBlackLabelConstraint" destination="sRH-OU-crb" id="71N-Ec-xyk"/>
                         <outlet property="tapRecognizer" destination="xXb-2C-ZUK" id="FDe-BG-dia"/>
                         <outlet property="textField" destination="suz-fZ-aJl" id="TwD-ti-Iws"/>
                         <outlet property="textFieldLabel" destination="dQw-qn-Ykf" id="yk4-wa-JCB"/>
                         <outlet property="textFieldUnderlineWidthConstrain" destination="rMX-nV-pKC" id="KRv-LF-NN4"/>
+                        <outlet property="writeNameLabelConstraint" destination="lHB-C0-sn5" id="feh-4g-MpN"/>
                         <segue destination="H4B-Nw-a8X" kind="presentation" identifier="segueToGameView" modalPresentationStyle="fullScreen" id="rZ3-Pr-C6q"/>
                     </connections>
                 </viewController>

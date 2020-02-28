@@ -12,6 +12,8 @@ import UIKit
 class Input2View: UIViewController {
     
     let segueToGameView = "segueToGameView"
+    @IBOutlet weak var playerBlackLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var writeNameLabelConstraint: NSLayoutConstraint!
     
     @IBOutlet var tapRecognizer: UITapGestureRecognizer!
     @IBOutlet weak var textField: UITextField!
@@ -24,6 +26,15 @@ class Input2View: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Reduce constraint constant for iPhone SE
+        if UIScreen.main.bounds.width == 320{
+            playerBlackLabelConstraint.constant = playerBlackLabelConstraint.constant - 60
+        }
+        if UIScreen.main.bounds.width == 320{
+            writeNameLabelConstraint.constant = writeNameLabelConstraint.constant - 60
+            
+        }
         
         dismissKeyboard()
         

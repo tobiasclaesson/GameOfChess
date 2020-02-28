@@ -15,6 +15,8 @@ class Input1View: UIViewController {
     
     var whitePlayerName = ""
     @IBOutlet var tapRecognizer: UITapGestureRecognizer!
+    @IBOutlet weak var playerWhiteLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var writeNameLabelConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var labelUnderlineView: UIView!
     @IBOutlet weak var textFieldLabel: UILabel!
@@ -24,6 +26,15 @@ class Input1View: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Reduce constraint constant for iPhone SE
+        if UIScreen.main.bounds.width == 320{
+            playerWhiteLabelConstraint.constant = playerWhiteLabelConstraint.constant - 60
+        }
+        if UIScreen.main.bounds.width == 320{
+            writeNameLabelConstraint.constant = writeNameLabelConstraint.constant - 60
+            
+        }
         
         dismissKeyboard()
         
