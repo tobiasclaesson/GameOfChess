@@ -224,8 +224,8 @@ class GameView: UIViewController {
         
         
         //Round down to closest tile origin
-        xx = (x / GameView.TILE_SIZE) * GameView.TILE_SIZE
-        yy = (y / GameView.TILE_SIZE) * GameView.TILE_SIZE
+        xx = (xx / GameView.TILE_SIZE) * GameView.TILE_SIZE
+        yy = (yy / GameView.TILE_SIZE) * GameView.TILE_SIZE
         
         
         // Add constants
